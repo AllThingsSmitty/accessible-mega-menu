@@ -1,0 +1,66 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+html {
+  font-size: 14px;
+  line-height: 1.5;
+}
+body {
+  color: #333;
+  cursor: default;
+  font-family: source-sans-pro, sans-serif;
+}
+code,
+pre {
+  font-family: source-code-pro, monospace;
+}
+h1, h2 {
+  font-style: normal;
+  font-weight: 300;
+}
+h1 {
+  font-size: 1.675rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+.layout-grid {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 900px;
+}
+.layout-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fill-extra-light {
+  background-color: #fff;
+}
+.diffuse-shadow {
+  box-shadow: 0 0 9px 1px rgba(0, 0, 0, .2);
+  zoom: 100%;
+}
+.init * {
+  transition: none !important;
+}
+:link {
+  color: #225fd7;
+  text-decoration: none;
+}
+:link:focus {
+  outline: 2px solid rgba(34, 95, 215, 0.3);
+}
+:link:hover,
+:link:focus {
+  text-decoration: underline;
+}
+:link:active,
+:link:hover {
+  outline: 0;
+}

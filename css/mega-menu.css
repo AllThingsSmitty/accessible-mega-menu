@@ -1,0 +1,207 @@
+.accessible-megamenu {
+  background-color: #dfe2e2;
+  border-color: #b3b3b3;
+  border-color: rgba(0, 0, 0, 0.3);
+  border-style: solid;
+  border-width: 0 1px 1px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-sizing: border-box;
+  color: #454545;
+  display: block;
+  height: 3.077em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.accessible-megamenu h2,
+.accessible-megamenu h3,
+.accessible-megamenu h4 {
+  display: inline;
+  font-size: 1em;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+.accessible-megamenu .accessible-megamenu-top-nav-item {
+  border-right: 1px solid #b3b3b3;
+  border-right-color: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  color: #454545 !important;
+  display: block;
+  float: left;
+  height: 3.077em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-shadow: 0 1px 0 #fff;
+}
+.accessible-megamenu:focus {
+  outline: 2px solid rgba(34, 95, 215, 0.3);
+}
+.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup] {
+  position: relative;
+  display: block;
+  line-height: 3em;
+  height: 3em;
+  padding-left: 0.769em;
+  padding-right: 0.769em;
+  color: #454545 !important;
+  text-decoration: none;
+  box-shadow: inset 1px 1px 0 #fff;
+  z-index: inherit;
+}
+.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup]:hover,
+.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup]:focus {
+  color: #333 !important;
+  outline-offset: -1px;
+}
+.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup]:hover,
+.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup]:focus,
+.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup].open {
+  margin-left: 0;
+  background: #f5f8fa none;
+  z-index: 1002;
+}
+.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup].open {
+  background: #f5f8fa none;
+  padding-bottom: 2px;
+}
+.accessible-megamenu .accessible-megamenu-top-nav-item:first-child a[aria-haspopup] {
+  border-bottom-left-radius: 3px;
+}
+.accessible-megamenu .accessible-megamenu-top-nav-item:first-child a[aria-haspopup].open {
+  border-bottom-left-radius: 0px;
+  border-left: 1px solid #b3b3b3;
+  border-left-color: rgba(0, 0, 0, 0.3);
+  left: -1px;
+  margin-right: -1px;
+}
+.accessible-megamenu .accessible-megamenu-panel {
+  position: absolute;
+  display: block;
+  left: -1px;
+  color: #454545;
+  margin: 0;
+  padding: 0 0.769em 0.769em;
+  line-height: normal;
+  background-color: #f5f8fa;
+  cursor: default;
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, .5), inset 1px 1px 0 #fff;
+  visibility: hidden;
+  top: -9999em;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 250ms ease 250ms, max-height 500ms ease, visibility 0s linear 500ms, top 0s linear 500ms;
+  border: 1px solid #b3b3b3;
+  border-color: rgba(0, 0, 0, 0.3);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.accessible-megamenu .accessible-megamenu-panel.open {
+  visibility: visible;
+  top: 3em;
+  max-height: 600px;
+  opacity: 1;
+  z-index: 1001;
+  transition: opacity 250ms ease, max-height 500ms ease, visibility 0s linear 0s, top 0s linear 0s;
+}
+.accessible-megamenu .accessible-megamenu-panel a {
+  color: #225FD7;
+  display: inline-block;
+  font-size: .92em;
+  font-weight: bold;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+  text-decoration: none;
+}
+.accessible-megamenu .accessible-megamenu-panel.cols-4 {
+  width: 878px;
+}
+.accessible-megamenu .accessible-megamenu-panel.cols-4 > ol > li {
+  width: 22%;
+}
+.accessible-megamenu .accessible-megamenu-panel.cols-4b {
+  border-top-left-radius: 3px;
+  left: -6.462em;
+  width: 878px;
+}
+.accessible-megamenu .accessible-megamenu-panel.cols-4b > ol > li {
+  width: 22%;
+}
+.accessible-megamenu .accessible-megamenu-panel.cols-3 {
+  width: 724px;
+}
+.accessible-megamenu .accessible-megamenu-panel.cols-3 > ol > li {
+  width: 30%;
+}
+.accessible-megamenu .accessible-megamenu-panel.cols-1 {
+  width: 615px;
+}
+.accessible-megamenu .accessible-megamenu-panel.cols-1 > ol > li {
+  width: auto;
+}
+.accessible-megamenu .accessible-megamenu-panel ol {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.accessible-megamenu .accessible-megamenu-panel ol > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.accessible-megamenu .accessible-megamenu-panel > ol > li {
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: inset 1px 0 0 #fff;
+  display: block;
+  float: left;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  padding-left: 1em;
+}
+.accessible-megamenu .accessible-megamenu-panel > ol > li:first-of-type {
+  border-left: none;
+  box-shadow: none;
+  padding-left: 0;
+}
+.accessible-megamenu .accessible-megamenu-panel > p {
+  color: #454545;
+  font-size: 1.2em;
+  line-height: 1.1em;
+}
+.accessible-megamenu .accessible-megamenu-panel > ol > li > h3 > a {
+  color: #454545;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.1em;
+  margin-bottom: 6px;
+  padding-bottom: 0;
+  padding-top: .4em;
+}
+.accessible-megamenu .accessible-megamenu-panel ol ol > li > a {
+  padding-left: 2.333em;
+  text-indent: -2.333em;
+  width: auto;
+}
+.accessible-megamenu .accessible-megamenu-panel a:hover,
+.accessible-megamenu .accessible-megamenu-panel a:focus {
+  color: #225fd7;
+  text-decoration: underline;
+}
+.accessible-megamenu .accessible-megamenu-panel > ol > li > h3 > a:hover,
+.accessible-megamenu .accessible-megamenu-panel > ol > li > h3 > a:focus {
+  color: #333;
+}
+.accessible-megamenu .accessible-megamenu-panel hr {
+  border-bottom-color: #fff;
+  border-style: solid;
+  border-top-color: rgba(0, 0, 0, 0.3);
+  border-width: 1px 0;
+}
