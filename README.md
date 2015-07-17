@@ -358,7 +358,7 @@ Putting it all together, here is the completed example:
 <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
 
 <!-- include the accessible-mega-menu plugin script -->
-<script src="js/jquery-accessibleMegaMenu.js"></script>
+<script src="js/accessible-mega-menu.js"></script>
 
 <!-- initialize a selector as an accessible-mega-menu -->
 <script>
