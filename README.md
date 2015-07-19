@@ -394,3 +394,5 @@ Putting it all together, here is the completed example:
 ```
 
 ## Support
+
+Current versions of Chrome, Firefox, Opera, and Safari; IE8+.
