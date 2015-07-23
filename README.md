@@ -78,25 +78,25 @@ defaults = {
   // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
   uuidPrefix: "accessible-megamenu",
 
-  // default css class used to define the megamenu styling
+  // default CSS class used to define the megamenu styling
   menuClass: "accessible-megamenu",
 
-  // default css class for a top-level navigation item in the megamenu
+  // default CSS class for a top-level navigation item in the megamenu
   topNavItemClass: "accessible-megamenu-top-nav-item",
 
-  // default css class for a megamenu panel */
+  // default CSS class for a megamenu panel */
   panelClass: "accessible-megamenu-panel",
 
-  // default css class for a group of items within a megamenu panel
+  // default CSS class for a group of items within a megamenu panel
   panelGroupClass: "accessible-megamenu-panel-group",
 
-  // default css class for the hover state
+  // default CSS class for the hover state
   hoverClass: "hover",
 
-  // default css class for the focus state
+  // default CSS class for the focus state
   focusClass: "focus",
 
-  // default css class for the open state
+  // default CSS class for the open state
   openClass: "open" 
 }
 ```
@@ -105,7 +105,7 @@ You can optionally override the defaults to use the CSS classes you may have alr
 
 ### JavaScript
 
-Be sure to include jQuery and the accessible-mega-menu.js plugin script.
+Be sure to include jQuery and the accessible-mega-menu.js plugin script. jQuery 1.10.0 is the highest version that will continue to support IE8.
 
 ```html
   <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -120,25 +120,25 @@ $("nav:first").accessibleMegaMenu({
   // to indicate aria-owns, aria-controls and aria-labelledby
   uuidPrefix: "accessible-megamenu",
 
-  // css class used to define the megamenu styling
+  // CSS class used to define the megamenu styling
   menuClass: "nav-menu",
 
-  // css class for a top-level navigation item in the megamenu
+  // CSS class for a top-level navigation item in the megamenu
   topNavItemClass: "nav-item",
 
-  // css class for a megamenu panel
+  // CSS class for a megamenu panel
   panelClass: "sub-nav",
 
-  // css class for a group of items within a megamenu panel
+  // CSS class for a group of items within a megamenu panel
   panelGroupClass: "sub-nav-group",
 
-  // css class for the hover state
+  // CSS class for the hover state
   hoverClass: "hover",
 
-  // css class for the focus state
+  // CSS class for the focus state
   focusClass: "focus",
 
-  // css class for the open state
+  // CSS class for the open state
   openClass: "open"
 });
 ```
@@ -367,25 +367,25 @@ Putting it all together, here is the completed example:
     // to indicate aria-owns, aria-controls and aria-labelledby
     uuidPrefix: "accessible-megamenu",
 
-    // css class used to define the megamenu styling
+    // CSS class used to define the megamenu styling
     menuClass: "nav-menu",
 
-    // css class for a top-level navigation item in the megamenu
+    // CSS class for a top-level navigation item in the megamenu
     topNavItemClass: "nav-item",
 
-    // css class for a megamenu panel
+    // CSS class for a megamenu panel
     panelClass: "sub-nav",
 
-    // css class for a group of items within a megamenu panel
+    // CSS class for a group of items within a megamenu panel
     panelGroupClass: "sub-nav-group",
 
-    // css class for the hover state
+    // CSS class for the hover state
     hoverClass: "hover",
 
-    // css class for the focus state
+    // CSS class for the focus state
     focusClass: "focus",
 
-    // css class for the open state
+    // CSS class for the open state
     openClass: "open"
   });
   </script>
