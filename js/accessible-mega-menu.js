@@ -4,13 +4,13 @@
   var pluginName = "accessibleMegaMenu",
     defaults = {
       uuidPrefix: "accessible-megamenu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
-      menuClass: "accessible-megamenu", // default css class used to define the megamenu styling
-      topNavItemClass: "accessible-megamenu-top-nav-item", // default css class for a top-level navigation item in the megamenu
-      panelClass: "accessible-megamenu-panel", // default css class for a megamenu panel
-      panelGroupClass: "accessible-megamenu-panel-group", // default css class for a group of items within a megamenu panel
-      hoverClass: "hover", // default css class for the hover state
-      focusClass: "focus", // default css class for the focus state
-      openClass: "open" // default css class for the open state
+      menuClass: "accessible-megamenu", // default CSS class used to define the megamenu styling
+      topNavItemClass: "accessible-megamenu-top-nav-item", // default CSS class for a top-level navigation item in the megamenu
+      panelClass: "accessible-megamenu-panel", // default CSS class for a megamenu panel
+      panelGroupClass: "accessible-megamenu-panel-group", // default CSS class for a group of items within a megamenu panel
+      hoverClass: "hover", // default CSS class for the hover state
+      focusClass: "focus", // default CSS class for the focus state
+      openClass: "open" // default CSS class for the open state
     },
     Keyboard = {
       BACKSPACE: 8,
@@ -339,7 +339,7 @@
           });
         }, 25);
       } else {
-        that.focusTimeoutID = setTimeout(function() {
+        that.focusTimeoutID = setTimeout(function () {
           _togglePanel.call(that, event, true);
         }, 300);
       }
@@ -385,10 +385,10 @@
       }
 
       switch (keycode) {
-        case Keyboard.ESCAPE:
-          _togglePanel.call(that, event, true);
-          break;
-        case Keyboard.DOWN:
+      case Keyboard.ESCAPE:
+        _togglePanel.call(that, event, true);
+        break;
+      case Keyboard.DOWN:
         event.preventDefault();
         if (isTopNavItem) {
           _togglePanel.call(that, event);
@@ -403,158 +403,158 @@
           found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
         }
         break;
-        case Keyboard.UP:
-          event.preventDefault();
-          if (isTopNavItem && target.hasClass(settings.openClass)) {
-            _togglePanel.call(that, event, true);
-            next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
-            if (next.children('.' + settings.panelClass).length) {
-              found = (next.children()
-                .attr('aria-expanded', 'true')
-                .addClass(settings.openClass)
-                .filter('.' + settings.panelClass)
-                .attr('aria-hidden', 'false')
-                .find(':tabbable:last')
-                .focus() === 1);
-            }
-          } else if (!isTopNavItem) {
-            found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').focus().length === 1);
+      case Keyboard.UP:
+        event.preventDefault();
+        if (isTopNavItem && target.hasClass(settings.openClass)) {
+          _togglePanel.call(that, event, true);
+          next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
+          if (next.children('.' + settings.panelClass).length) {
+            found = (next.children()
+              .attr('aria-expanded', 'true')
+              .addClass(settings.openClass)
+              .filter('.' + settings.panelClass)
+              .attr('aria-hidden', 'false')
+              .find(':tabbable:last')
+              .focus() === 1);
           }
+        } else if (!isTopNavItem) {
+          found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').focus().length === 1);
+        }
 
-          if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
-            tabbables = $(':tabbable');
-            i = tabbables.index(target);
-            found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
-          }
-          break;
-        case Keyboard.RIGHT:
-          event.preventDefault();
-          if (isTopNavItem) {
-            found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').focus().length === 1);
-          } else {
-            if (panelGroups.length && currentPanelGroup.length) {
-              // if the current panel contains panel groups, and we are able to focus the first tabbable element of the next panel group
-              found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').focus().length === 1);
-            }
-
-            if (!found) {
-              found = (topli.find(':tabbable:first').focus().length === 1);
-            }
-          }
-          break;
-        case Keyboard.LEFT:
-          event.preventDefault();
-          if (isTopNavItem) {
-            found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').focus().length === 1);
-          } else {
-            if (panelGroups.length && currentPanelGroup.length) {
-              // if the current panel contains panel groups, and we are able to focus the first tabbable element of the previous panel group
-              found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').focus().length === 1);
-            }
-
-            if (!found) {
-              found = (topli.find(':tabbable:first').focus().length === 1);
-            }
-          }
-          break;
-        case Keyboard.TAB:
+        if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
+          tabbables = $(':tabbable');
           i = tabbables.index(target);
-          if (event.shiftKey && isTopNavItem && target.hasClass(settings.openClass)) {
-            _togglePanel.call(that, event, true);
-            next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
-            if (next.children('.' + settings.panelClass).length) {
-              found = next.children()
-                .attr('aria-expanded', 'true')
-                .addClass(settings.openClass)
-                .filter('.' + settings.panelClass)
-                .attr('aria-hidden', 'false')
-                .find(':tabbable:last')
-                .focus();
-            }
-          } else if (event.shiftKey && i > 0) {
-            found = (tabbables.filter(':lt(' + i + '):last').focus().length === 1);
-          } else if (!event.shiftKey && i < tabbables.length - 1) {
-            found = (tabbables.filter(':gt(' + i + '):first').focus().length === 1);
-          } else if (window.opera && opera.toString() === "[object Opera]") {
-            tabbables = $(':tabbable');
-            i = tabbables.index(target);
-            if (event.shiftKey) {
-              found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').focus().length === 1);
-            } else {
-              found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
-            }
+          found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
+        }
+        break;
+      case Keyboard.RIGHT:
+        event.preventDefault();
+        if (isTopNavItem) {
+          found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').focus().length === 1);
+        } else {
+          if (panelGroups.length && currentPanelGroup.length) {
+            // if the current panel contains panel groups, and we are able to focus the first tabbable element of the next panel group
+            found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').focus().length === 1);
           }
 
-          if (found) {
-            event.preventDefault();
+          if (!found) {
+            found = (topli.find(':tabbable:first').focus().length === 1);
           }
-          break;
-        case Keyboard.SPACE:
-          if (isTopNavItem) {
-            event.preventDefault();
-            _clickHandler.call(that, event);
-          } else {
-            return true;
-          }
-          break;
-        case Keyboard.ENTER:
-          return true;
-          break;
-        default:
-          // alphanumeric filter
-          clearTimeout(this.keydownTimeoutID);
-
-          keydownSearchString += newString !== keydownSearchString ? newString : '';
-
-          if (keydownSearchString.length === 0) {
-            return;
+        }
+        break;
+      case Keyboard.LEFT:
+        event.preventDefault();
+        if (isTopNavItem) {
+          found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').focus().length === 1);
+        } else {
+          if (panelGroups.length && currentPanelGroup.length) {
+            // if the current panel contains panel groups, and we are able to focus the first tabbable element of the previous panel group
+            found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').focus().length === 1);
           }
 
-          this.keydownTimeoutID = setTimeout(function() {
-            keydownSearchString = '';
-          }, keydownTimeoutDuration);
-
-          if (isTopNavItem && !target.hasClass(settings.openClass)) {
-            tabbables = tabbables.filter(':not(.' + settings.panelClass + ' :tabbable)');
-          } else {
-            tabbables = topli.find(':tabbable');
+          if (!found) {
+            found = (topli.find(':tabbable:first').focus().length === 1);
           }
-
+        }
+        break;
+      case Keyboard.TAB:
+        i = tabbables.index(target);
+        if (event.shiftKey && isTopNavItem && target.hasClass(settings.openClass)) {
+          _togglePanel.call(that, event, true);
+          next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
+          if (next.children('.' + settings.panelClass).length) {
+            found = next.children()
+              .attr('aria-expanded', 'true')
+              .addClass(settings.openClass)
+              .filter('.' + settings.panelClass)
+              .attr('aria-hidden', 'false')
+              .find(':tabbable:last')
+              .focus();
+          }
+        } else if (event.shiftKey && i > 0) {
+          found = (tabbables.filter(':lt(' + i + '):last').focus().length === 1);
+        } else if (!event.shiftKey && i < tabbables.length - 1) {
+          found = (tabbables.filter(':gt(' + i + '):first').focus().length === 1);
+        } else if (window.opera && opera.toString() === "[object Opera]") {
+          tabbables = $(':tabbable');
+          i = tabbables.index(target);
           if (event.shiftKey) {
-            tabbables = $(tabbables.get()
-              .reverse());
+            found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').focus().length === 1);
+          } else {
+            found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
           }
+        }
 
-          for (i = 0; i < tabbables.length; i++) {
-            o = tabbables.eq(i);
-            if (o.is(target)) {
-              start = (keydownSearchString.length === 1) ? i + 1 : i;
-              break;
-            }
+        if (found) {
+          event.preventDefault();
+        }
+        break;
+      case Keyboard.SPACE:
+        if (isTopNavItem) {
+          event.preventDefault();
+          _clickHandler.call(that, event);
+        } else {
+          return true;
+        }
+        break;
+      case Keyboard.ENTER:
+        return true;
+        break;
+      default:
+        // alphanumeric filter
+        clearTimeout(this.keydownTimeoutID);
+
+        keydownSearchString += newString !== keydownSearchString ? newString : '';
+
+        if (keydownSearchString.length === 0) {
+          return;
+        }
+
+        this.keydownTimeoutID = setTimeout(function () {
+          keydownSearchString = '';
+        }, keydownTimeoutDuration);
+
+        if (isTopNavItem && !target.hasClass(settings.openClass)) {
+          tabbables = tabbables.filter(':not(.' + settings.panelClass + ' :tabbable)');
+        } else {
+          tabbables = topli.find(':tabbable');
+        }
+
+        if (event.shiftKey) {
+          tabbables = $(tabbables.get()
+            .reverse());
+        }
+
+        for (i = 0; i < tabbables.length; i++) {
+          o = tabbables.eq(i);
+          if (o.is(target)) {
+            start = (keydownSearchString.length === 1) ? i + 1 : i;
+            break;
           }
+        }
 
-          regex = new RegExp('^' + keydownSearchString.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&'), 'i');
+        regex = new RegExp('^' + keydownSearchString.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&'), 'i');
 
-          for (i = start; i < tabbables.length; i++) {
+        for (i = start; i < tabbables.length; i++) {
+          o = tabbables.eq(i);
+          label = $.trim(o.text());
+          if (regex.test(label)) {
+            found = true;
+            o.focus();
+            break;
+          }
+        }
+        if (!found) {
+          for (i = 0; i < start; i++) {
             o = tabbables.eq(i);
             label = $.trim(o.text());
             if (regex.test(label)) {
-              found = true;
               o.focus();
               break;
             }
           }
-          if (!found) {
-            for (i = 0; i < start; i++) {
-              o = tabbables.eq(i);
-              label = $.trim(o.text());
-              if (regex.test(label)) {
-                o.focus();
-                break;
-              }
-            }
-          }
-          break;
+        }
+        break;
       }
       that.justFocused = false;
     };
@@ -567,11 +567,11 @@
      * @inner
      * @private
      */
-    _mouseDownHandler = function(event) {
+    _mouseDownHandler = function (event) {
       if ($(event.target).is(this.settings.panelClass) || $(event.target).closest(":focusable").length) {
         this.mouseFocused = true;
       }
-      this.mouseTimeoutID = setTimeout(function() {
+      this.mouseTimeoutID = setTimeout(function () {
         clearTimeout(this.focusTimeoutID);
       }, 1);
     };
@@ -584,7 +584,7 @@
      * @inner
      * @private
      */
-    _mouseOverHandler = function(event) {
+    _mouseOverHandler = function (event) {
       clearTimeout(this.mouseTimeoutID);
       $(event.target)
         .addClass(this.settings.hoverClass);
@@ -602,12 +602,12 @@
      * @inner
      * @private
      */
-    _mouseOutHandler = function(event) {
+    _mouseOutHandler = function (event) {
       var that = this;
       $(event.target)
         .removeClass(that.settings.hoverClass);
 
-      that.mouseTimeoutID = setTimeout(function() {
+      that.mouseTimeoutID = setTimeout(function () {
         _togglePanel.call(that, event, true);
       }, 250);
       if ($(event.target).is(':tabbable')) {
@@ -615,7 +615,7 @@
       }
     };
 
-    _toggleExpandedEventHandlers = function(hide) {
+    _toggleExpandedEventHandlers = function (hide) {
       var menu = this.menu;
       if (hide) {
         $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu');
@@ -640,7 +640,7 @@
        * @memberof jQuery.fn.accessibleMegaMenu
        * @instance
        */
-      init: function() {
+      init: function () {
         var settings = this.settings,
           nav = $(this.element),
           menu = nav.children().first(),
@@ -648,7 +648,7 @@
         this.start(settings, nav, menu, topnavitems);
       },
 
-      start: function(settings, nav, menu, topnavitems) {
+      start: function (settings, nav, menu, topnavitems) {
         var that = this;
         this.settings = settings;
         this.menu = menu;
@@ -656,7 +656,7 @@
 
         nav.attr("role", "navigation");
         menu.addClass(settings.menuClass);
-        topnavitems.each(function(i, topnavitem) {
+        topnavitems.each(function (i, topnavitem) {
           var topnavitemlink, topnavitempanel;
           topnavitem = $(topnavitem);
           topnavitem.addClass(settings.topNavItemClass);
@@ -709,7 +709,7 @@
        * @memberof jQuery.fn.accessibleMegaMenu
        * @instance
        */
-      getDefaults: function() {
+      getDefaults: function () {
         return this._defaults;
       },
 
@@ -721,7 +721,7 @@
        * @memberof jQuery.fn.accessibleMegaMenu
        * @instance
        */
-      getOption: function(opt) {
+      getOption: function (opt) {
         return this.settings[opt];
       },
 
@@ -732,7 +732,7 @@
        * @memberof jQuery.fn.accessibleMegaMenu
        * @instance
        */
-      getAllOptions: function() {
+      getAllOptions: function () {
         return this.settings;
       },
 
@@ -745,7 +745,7 @@
        * @memberof jQuery.fn.accessibleMegaMenu
        * @instance
        */
-      setOption: function(opt, value, reinitialize) {
+      setOption: function (opt, value, reinitialize) {
         this.settings[opt] = value;
         if (reinitialize) {
           this.init();
@@ -754,8 +754,8 @@
     };
   }());
 
-  $.fn[pluginName] = function(options) {
-    return this.each(function() {
+  $.fn[pluginName] = function (options) {
+    return this.each(function () {
       if (!$.data(this, "plugin_" + pluginName)) {
         $.data(this, "plugin_" + pluginName, new $.fn[pluginName].AccessibleMegaMenu(this, options));
       }
@@ -771,7 +771,7 @@
    * @private
    */
   function visible(element) {
-    return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function() {
+    return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function () {
       return $.css(this, "visibility") === "hidden";
     }).length;
   }
@@ -800,20 +800,20 @@
   }
 
   $.extend($.expr[":"], {
-    data: $.expr.createPseudo ? $.expr.createPseudo(function(dataName) {
-        return function(elem) {
+    data: $.expr.createPseudo ? $.expr.createPseudo(function (dataName) {
+        return function (elem) {
           return !!$.data(elem, dataName);
         };
       }) : // support: jQuery <1.8
-      function(elem, i, match) {
+      function (elem, i, match) {
         return !!$.data(elem, match[3]);
       },
 
-    focusable: function(element) {
+    focusable: function (element) {
       return focusable(element, !isNaN($.attr(element, "tabindex")));
     },
 
-    tabbable: function(element) {
+    tabbable: function (element) {
       var tabIndex = $.attr(element, "tabindex"),
         isTabIndexNaN = isNaN(tabIndex);
       return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
