@@ -1,68 +1,71 @@
 # Accessible Mega Menu
 
-A demonstration of how to implement a keyboard and screen reader accessible mega menu as a jQuery plugin. It's modeled after the mega menu on [adobe.com](http://adobe.com/) but has been simplified for use by others. An brief explanation of our interaction design choices can be found in a blog post at [Mega menu accessibility on adobe.com](http://blogs.adobe.com/accessibility/2013/05/adobe-com.html).
-
-Content for the links and text within the mega menu comes from the [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG/).
+This demonstration shows how to implement a keyboard- and screen reader- accessible mega menu as a jQuery plugin. Content for the links and text within the mega menu comes from the [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG/).
 
 
 ## Keyboard Accessibility
 
-The accessible mega menu supports keyboard interaction modeled after the behavior described in the [WAI-ARIA Menu or Menu bar (widget) design pattern](http://www.w3.org/TR/wai-aria-practices/#menu), however we also try to respect users' general expectations for the behavior of links in a global navigation. To this end, the accessible mega menu implementation permits tab focus on each of the six top-level menu items. When one of the menu items has focus, pressing the Enter key, Spacebar or Down arrow will open the submenu panel, and pressing the Left or Right arrow key will shift focus to the adjacent menu item. Links within the submenu panels are included in the tab order when the panel is open. They can also be navigated with the arrow keys or by typing the first character in the link name, which speeds up keyboard navigation considerably. Pressing the Escape key closes the submenu and restores focus to the parent menu item.
+The accessible mega menu supports keyboard interaction modeled after the behavior described in the [WAI-ARIA Menu or Menu bar (widget) design pattern](http://www.w3.org/TR/wai-aria-practices/#menu), however it also respects users' general expectations for the behavior of links in a global navigation. To this end, the accessible mega menu implementation permits tab focus on each of the six top-level menu items.
+
+* When one of the menu items has focus, pressing the `Enter` key, `Spacebar` or `Down` arrow will open the submenu panel, and pressing the `Left` or `Right` arrow key will shift focus to the adjacent menu item.
+* Links within the submenu panels are included in the tab order when the panel is open. Links can also be navigated with the arrow keys or by typing the first character in the link name, which speeds up keyboard navigation considerably.
+* Pressing the `Escape` key closes the submenu and restores focus to the parent menu item.
 
 
 ## Screen Reader Accessibility
 
-The accessible mega menu models its use of WAI-ARIA Roles, States, and Properties after those described in the [WAI-ARIA Menu or Menu bar (widget) design pattern](http://www.w3.org/TR/wai-aria-practices/#menu) with some notable exceptions, so that it behaves better with screen reader user expectations for global navigation. We don't use `role="menu"` for the menu container and `role="menuitem"` for each of the links therein, because if we do, assistive technology will no longer interpret the links as links, but instead, as menu items, and the links in our global navigation will no longer show up when a screen reader user executes a shortcut command to bring up a list of links in the page.
+The accessible mega menu models its use of WAI-ARIA Roles, States, and Properties after those described in the [WAI-ARIA Menu or Menu bar (widget) design pattern](http://www.w3.org/TR/wai-aria-practices/#menu) with some notable exceptions, so that it behaves better with screen reader user expectations for global navigation. We don't use `role="menu"` for the menu container and `role="menuitem"` for each of the links therein; if we do, assistive technology will no longer interpret the links as _links_, but instead as _menu items_, and the links in the global navigation will no longer show up when a screen reader user executes a shortcut command to bring up a list of links in the page.
 
-We also want to maintain the semantic structure of the submenu panels in our mega menu; our links are organized into lists and separated by headings. Omitting `role="menu"` and `role="menuitem"` for the global navigation seems the safer way to go.
+We also want to maintain the semantic structure of the submenu panels in our mega menu; the links are organized into lists and separated by headings. Omitting `role="menu"` and `role="menuitem"` for the global navigation is the safer approach.
 
 
 ## Usage
 
 ### HTML
 
-The HTML structure for the mega menu is a `nav` element, or any other container element, containing a list. Each list item contains a link which is followed by a `div` or any other container element which will serve as the pop up panel.
-The panel can contain any html content; in the following example, each panel contains three lists of links. You can explicitly define groups within the panel, between which a user can navigate quickly using the left and right arrow keys; in the following example, the CSS class `.sub-nav-group` identifies a navigable group.
+The HTML structure for the accessible mega menu is a `nav` element &#8212; or any other container element &#8212; containing a list. Each list item contains a link which is followed by a `div` or any other container element which will serve as the pop up panel.
+
+The panel can contain any HTML content; in the following example, each panel contains three lists of links. You can explicitly define groups within the panel, between which a user can navigate quickly using the left and right arrow keys; in the following example, the CSS class `.sub-nav-group` identifies a navigable group.
 
 ```html
 <nav>
   <ul class="nav-menu">
     <li class="nav-item">
-      <a href="?movie">Movies</a>
+      <a href="?movie">Music</a>
       <div class="sub-nav">
         <ul class="sub-nav-group">
-          <li><a href="?movie&genre=0">Action &amp; Adventure</a></li>
-          <li><a href="?movie&genre=2">Children &amp; Family</a></li>
+          <li><a href="?music&amp;genre=0">Alternative</a></li>
+          <li><a href="?music&amp;genre=3">Country</a></li>
           <li>&#8230;</li>
         </ul>
         <ul class="sub-nav-group">
-          <li><a href="?movie&genre=7">Dramas</a></li>
-          <li><a href="?movie&genre=9">Foreign</a></li>
+          <li><a href="?music&amp;genre=1">Dance</a></li>
+          <li><a href="?music&amp;genre=4">Electronic</a></li>
           <li>&#8230;</li>
         </ul>
         <ul class="sub-nav-group">
-          <li><a href="?movie&genre=14">Musicals</a></li>
-          <li><a href="?movie&genre=15">Romance</a></li>
+          <li><a href="?music&amp;genre=2">Hip-Hop/Rap</a></li>
+          <li><a href="?music&amp;genre=5">Jazz</a></li>
           <li>&#8230;</li>
         </ul>
       </div>
     </li>
     <li class="nav-item">
-      <a href="?tv">TV Shows</a>
+      <a href="?tv">Movies</a>
       <div class="sub-nav">
         <ul class="sub-nav-group">
-          <li><a href="?tv&genre=20">Classic TV</a></li>
-          <li><a href="?tv&genre=21">Crime TV</a></li>
+          <li><a href="?movies&amp;genre=10">New Release</a></li>
+          <li><a href="?movies&amp;genre=13">Comedy</a></li>
           <li>&#8230;</li>
         </ul>
         <ul class="sub-nav-group">
-          <li><a href="?tv&genre=27">Reality TV</a></li>
-          <li><a href="?tv&genre=30">TV Action</a></li>
+          <li><a href="?movies&amp;genre=11">Drama</a></li>
+          <li><a href="?movies&amp;genre=14">Sci-Fi</a></li>
           <li>&#8230;</li>
         </ul>
         <ul class="sub-nav-group">
-          <li><a href="?tv&genre=33">TV Dramas</a></li>
-          <li><a href="?tv&genre=34">TV Horror</a></li>
+          <li><a href="?movies&amp;genre=12">Horror</a></li>
+          <li><a href="?movies&amp;genre=15">Documentary</a></li>
           <li>&#8230;</li>
         </ul>
       </div>
@@ -71,7 +74,7 @@ The panel can contain any html content; in the following example, each panel con
 </nav>
 ```
 
-By default, accessible-mega-menu uses the the following CSS classes to define the top-level navigation items, panels, groups within the panels, and the hover, focus, and open states. It also defines a prefix for unique id strings, which are required to indicate the relationship of a top-level navigation item to the panel it controls.
+By default, accessible-mega-menu uses the the following CSS classes to define the top-level navigation items, panels, groups within the panels, and the hover, focus, and open states. It also defines a prefix for unique ID strings, which are required to indicate the relationship of a top-level navigation item to the panel it controls.
 
 ```javascript
 defaults = {
@@ -146,7 +149,7 @@ $("nav:first").accessibleMegaMenu({
 
 AccessibleMegaMenu handles the showing and hiding of panels by adding or removing a CSS class. No inline styles are added to hide elements or create animation between states.
 
-The following is some rudimentary CSS for our example which enables the showing/hiding of and the layout of lists panels in the mega menu.
+This CSS example enables the showing/hiding of and the layout of lists panels in the mega menu.
 
 ```css
 /* mega menu list */
@@ -312,41 +315,41 @@ Putting it all together, here is the completed example:
   <nav>
     <ul class="nav-menu">
       <li class="nav-item">
-        <a href="?movie">Movies</a>
+        <a href="?movie">Music</a>
         <div class="sub-nav">
           <ul class="sub-nav-group">
-            <li><a href="?movie&genre=0">Action &amp; Adventure</a></li>
-            <li><a href="?movie&genre=2">Children &amp; Family</a></li>
+            <li><a href="?music&amp;genre=0">Alternative</a></li>
+            <li><a href="?music&amp;genre=3">Country</a></li>
             <li>&#8230;</li>
           </ul>
           <ul class="sub-nav-group">
-            <li><a href="?movie&genre=7">Dramas</a></li>
-            <li><a href="?movie&genre=9">Foreign</a></li>
+            <li><a href="?music&amp;genre=1">Dance</a></li>
+            <li><a href="?music&amp;genre=4">Electronic</a></li>
             <li>&#8230;</li>
           </ul>
           <ul class="sub-nav-group">
-            <li><a href="?movie&genre=14">Musicals</a></li>
-            <li><a href="?movie&genre=15">Romance</a></li>
+            <li><a href="?music&amp;genre=2">Hip-Hop/Rap</a></li>
+            <li><a href="?music&amp;genre=5">Jazz</a></li>
             <li>&#8230;</li>
           </ul>
         </div>
       </li>
       <li class="nav-item">
-        <a href="?tv">TV Shows</a>
+        <a href="?tv">Movies</a>
         <div class="sub-nav">
           <ul class="sub-nav-group">
-            <li><a href="?tv&genre=20">Classic TV</a></li>
-            <li><a href="?tv&genre=21">Crime TV</a></li>
+            <li><a href="?movies&amp;genre=10">New Release</a></li>
+            <li><a href="?movies&amp;genre=13">Comedy</a></li>
             <li>&#8230;</li>
           </ul>
           <ul class="sub-nav-group">
-            <li><a href="?tv&genre=27">Reality TV</a></li>
-            <li><a href="?tv&genre=30">TV Action</a></li>
+            <li><a href="?movies&amp;genre=11">Drama</a></li>
+            <li><a href="?movies&amp;genre=14">Sci-Fi</a></li>
             <li>&#8230;</li>
           </ul>
           <ul class="sub-nav-group">
-            <li><a href="?tv&genre=33">TV Dramas</a></li>
-            <li><a href="?tv&genre=34">TV Horror</a></li>
+            <li><a href="?movies&amp;genre=12">Horror</a></li>
+            <li><a href="?movies&amp;genre=15">Documentary</a></li>
             <li>&#8230;</li>
           </ul>
         </div>
