@@ -1,7 +1,5 @@
 .accessible-megamenu {
   background: #dfe2e2;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
   border-color: #b3b3b3;
   border-color: rgba(0, 0, 0, 0.3);
   border-style: solid;
@@ -25,7 +23,6 @@
 }
 .accessible-megamenu .accessible-megamenu-top-nav-item {
   border-right: 1px solid #b3b3b3;
-  border-right-color: #111;
   box-sizing: border-box;
   color: #454545 !important;
   display: block;
@@ -68,23 +65,14 @@
   background: #f5f8fa none;
   padding-bottom: 2px;
 }
-.accessible-megamenu .accessible-megamenu-top-nav-item:first-child a[aria-haspopup] {
-  border-bottom-left-radius: 3px;
-}
 .accessible-megamenu .accessible-megamenu-top-nav-item:first-child a[aria-haspopup].open {
-  border-bottom-left-radius: 0px;
   border-left: 1px solid #b3b3b3;
-  border-left-color: #111;
   left: -1px;
   margin-right: -1px;
 }
 .accessible-megamenu .accessible-megamenu-panel {
   background: #f5f8fa;
   border: 1px solid #b3b3b3;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-color: #111;
-  border-top-right-radius: 3px;
   box-shadow: 0 4px 6px -2px #101, inset 1px 1px 0 #fff;
   color: #454545;
   cursor: default;
@@ -110,7 +98,7 @@
   z-index: 1001;
 }
 .accessible-megamenu .accessible-megamenu-panel a {
-  color: #225FD7;
+  color: #225fd7;
   display: inline-block;
   font-size: .92em;
   font-weight: bold;
@@ -125,7 +113,6 @@
   width: 22%;
 }
 .accessible-megamenu .accessible-megamenu-panel.cols-4b {
-  border-top-left-radius: 3px;
   left: -6.462em;
   width: 878px;
 }
@@ -201,6 +188,6 @@
 .accessible-megamenu .accessible-megamenu-panel hr {
   border-bottom-color: #fff;
   border-style: solid;
-  border-top-color: #111;
+  border-top-color: ##b3b3b3;
   border-width: 1px 0;
 }
