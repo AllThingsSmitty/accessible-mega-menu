@@ -9,8 +9,8 @@
     <script src="js/accessible-mega-menu.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body class="init">
-    <div class="layout-grid layout-center diffuse-shadow fill-extra-light">
+  <body>
+    <div class="layout">
       <nav class="megamenu">
         <ol>
           <li>
@@ -234,8 +234,10 @@
         <h2>Keyboard Accessibility</h2>
         <p>The accessible mega menu supports keyboard interaction modeled after the behavior described in the <a href="http://www.w3.org/TR/wai-aria-practices/#menu">WAI-ARIA Menu or Menu bar (widget) design pattern</a>, however we also try to respect users' general expectations for the behavior of links in a global navigation. To this end, the accessible mega menu implementation permits tab focus on each of the six top-level menu items. When one of the menu items has focus, pressing the Enter key, Spacebar or Down arrow will open the submenu panel, and pressing the Left or Right arrow key will shift focus to the adjacent menu item. Links within the submenu panels are included in the tab order when the panel is open. They can also be navigated with the arrow keys or by typing the first character in the link name, which speeds up keyboard navigation considerably. Pressing the Escape key closes the submenu and restores focus to the parent menu item.</p>
         <h2>Screen Reader Accessibility</h2>
-        <p>The accessible mega menu models its use of WAI-ARIA Roles, States, and Properties after those described in the <a href="http://www.w3.org/TR/wai-aria-practices/#menu">WAI-ARIA Menu or Menu bar (widget) design pattern</a> with some notable exceptions, so that it behaves better with screen reader user expectations for global navigation. We don't use <code class="prettyprint">role="menu"</code> for the menu container and <code class="prettyprint">role="menuitem"</code> for each of the links therein, because if we do, assistive technology will no longer interpret the links as links, but instead, as menu items, and the links in our global navigation will no longer show up when a screen reader user executes a shortcut command to bring up a list of links in the page.</p>
-        <p>We also want to maintain the semantic structure of the submenu panels in our mega menu; our links are organized into lists and separated by headings. Omitting <code class="prettyprint">role="menu"</code> and <code class="prettyprint">role="menuitem"</code> for the global navigation seems the safer way to go.</p>
+        <p>The accessible mega menu models its use of WAI-ARIA Roles, States, and Properties after those described in the <a href="http://www.w3.org/TR/wai-aria-practices/#menu">WAI-ARIA Menu or Menu bar (widget) design pattern</a> with some notable exceptions, so that it behaves better with screen reader user expectations for global navigation. We don't use <code>role="menu"</code> for the menu container and <code>role="menuitem"</code> for each of the links therein, because if we do, assistive technology will no longer interpret the links as links, but instead, as menu items, and the links in our global navigation will no longer show up when a screen reader user executes a shortcut command to bring up a list of links in the page.</p>
+        <p>We also want to maintain the semantic structure of the submenu panels in our mega menu; our links are organized into lists and separated by headings. Omitting <code>role="menu"</code> and <code>role="menuitem"</code> for the global navigation seems the safer way to go.</p>
+        <h2>Browser Support</h2>
+        <p>The accessible mega menu works in current versions of Chrome, Firefox, Opera, and Safari, and IE9+.</p>
       </main>
     </div>
   </body>
