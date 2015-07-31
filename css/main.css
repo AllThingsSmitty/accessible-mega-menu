@@ -16,7 +16,8 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 code {
-  background: #eeeef5;
+  background: #f4f4f4;
+  border-radius: 3px;
   padding: 3px;
 }
 h1 {
@@ -27,8 +28,8 @@ h2 {
 }
 .layout {
   background: #fff;
-  box-shadow: 0 0 5px 1px #333;
   bottom: 0;
+  box-shadow: 0 0 5px 1px #333;
   left: 0;
   margin: auto;
   padding: 0 10px 10px;
