@@ -3,11 +3,11 @@
   'use strict';
   var pluginName = "accessibleMegaMenu",
     defaults = {
-      uuidPrefix: "accessible-megamenu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
-      menuClass: "accessible-megamenu", // default CSS class used to define the megamenu styling
-      topNavItemClass: "accessible-megamenu-top-nav-item", // default CSS class for a top-level navigation item in the megamenu
-      panelClass: "accessible-megamenu-panel", // default CSS class for a megamenu panel
-      panelGroupClass: "accessible-megamenu-panel-group", // default CSS class for a group of items within a megamenu panel
+      uuidPrefix: "menu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
+      menuClass: "menu", // default CSS class used to define the megamenu styling
+      topNavItemClass: "menu-top-nav-item", // default CSS class for a top-level navigation item in the megamenu
+      panelClass: "menu-panel", // default CSS class for a megamenu panel
+      panelGroupClass: "menu-panel-group", // default CSS class for a group of items within a megamenu panel
       hoverClass: "hover", // default CSS class for the hover state
       focusClass: "focus", // default CSS class for the focus state
       openClass: "open" // default CSS class for the open state
@@ -184,7 +184,7 @@
           if ((event.type === 'keydown' && event.keyCode === Keyboard.ESCAPE) || event.type === 'DOMAttrModified') {
             newfocus = topli.find(':tabbable:first');
             setTimeout(function () {
-              menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.accessible-megamenu');
+              menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.menu');
               newfocus.focus();
               that.justFocused = false;
             }, 99);
@@ -296,7 +296,7 @@
         panel = target.closest('.' + this.settings.panelClass);
       target
         .addClass(this.settings.focusClass)
-        .on('click.accessible-megamenu', $.proxy(_clickHandler, this));
+        .on('click.menu', $.proxy(_clickHandler, this));
       this.justFocused = !this.mouseFocused;
       this.mouseFocused = false;
       if (this.panels.not(panel).filter('.' + this.settings.openClass).length) {
@@ -320,7 +320,7 @@
         keepOpen = false;
       target
         .removeClass(this.settings.focusClass)
-        .off('click.accessible-megamenu');
+        .off('click.menu');
 
       if (window.cvox) {
         // If ChromeVox is running...
@@ -381,7 +381,7 @@
       }
 
       if (target.is('.' + settings.hoverClass + ':tabbable')) {
-        $('html').off('keydown.accessible-megamenu');
+        $('html').off('keydown.menu');
       }
 
       switch (keycode) {
@@ -590,7 +590,7 @@
         .addClass(this.settings.hoverClass);
       _togglePanel.call(this, event);
       if ($(event.target).is(':tabbable')) {
-        $('html').on('keydown.accessible-megamenu', $.proxy(_keyDownHandler, event.target));
+        $('html').on('keydown.menu', $.proxy(_keyDownHandler, event.target));
       }
     };
 
@@ -611,22 +611,22 @@
         _togglePanel.call(that, event, true);
       }, 250);
       if ($(event.target).is(':tabbable')) {
-        $('html').off('keydown.accessible-megamenu');
+        $('html').off('keydown.menu');
       }
     };
 
     _toggleExpandedEventHandlers = function (hide) {
       var menu = this.menu;
       if (hide) {
-        $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu');
+        $('html').off('mouseup.outside-menu, touchend.outside-menu, mspointerup.outside-menu,  pointerup.outside-menu');
 
-        menu.find('[aria-expanded].' + this.settings.panelClass).off('DOMAttrModified.accessible-megamenu');
+        menu.find('[aria-expanded].' + this.settings.panelClass).off('DOMAttrModified.menu');
       } else {
-        $('html').on('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu', $.proxy(_clickOutsideHandler, this));
+        $('html').on('mouseup.outside-menu, touchend.outside-menu, mspointerup.outside-menu,  pointerup.outside-menu', $.proxy(_clickOutsideHandler, this));
 
         /* Narrator in Windows 8 automatically toggles the aria-expanded property on double tap or click.
            To respond to the change to collapse the panel, we must add a listener for a DOMAttrModified event. */
-        menu.find('[aria-expanded=true].' + this.settings.panelClass).on('DOMAttrModified.accessible-megamenu', $.proxy(_DOMAttrModifiedHandler, this));
+        menu.find('[aria-expanded=true].' + this.settings.panelClass).on('DOMAttrModified.menu', $.proxy(_DOMAttrModifiedHandler, this));
       }
     };
 
@@ -684,21 +684,21 @@
 
         this.panels = menu.find("." + settings.panelClass);
 
-        menu.on("focusin.accessible-megamenu", ":focusable, ." + settings.panelClass, $.proxy(_focusInHandler, this))
-          .on("focusout.accessible-megamenu", ":focusable, ." + settings.panelClass, $.proxy(_focusOutHandler, this))
-          .on("keydown.accessible-megamenu", $.proxy(_keyDownHandler, this))
-          .on("mouseover.accessible-megamenu", $.proxy(_mouseOverHandler, this))
-          .on("mouseout.accessible-megamenu", $.proxy(_mouseOutHandler, this))
-          .on("mousedown.accessible-megamenu", $.proxy(_mouseDownHandler, this));
+        menu.on("focusin.menu", ":focusable, ." + settings.panelClass, $.proxy(_focusInHandler, this))
+          .on("focusout.menu", ":focusable, ." + settings.panelClass, $.proxy(_focusOutHandler, this))
+          .on("keydown.menu", $.proxy(_keyDownHandler, this))
+          .on("mouseover.menu", $.proxy(_mouseOverHandler, this))
+          .on("mouseout.menu", $.proxy(_mouseOutHandler, this))
+          .on("mousedown.menu", $.proxy(_mouseDownHandler, this));
 
         if (isTouch) {
-          menu.on("touchstart.accessible-megamenu", $.proxy(_clickHandler, this));
+          menu.on("touchstart.menu", $.proxy(_clickHandler, this));
         }
 
         menu.find("hr").attr("role", "separator");
 
         if ($(document.activeElement).closest(menu).length) {
-          $(document.activeElement).trigger("focusin.accessible-megamenu");
+          $(document.activeElement).trigger("focusin.menu");
         }
       },
 
