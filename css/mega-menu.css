@@ -6,7 +6,6 @@
   border-width: 0 1px 1px;
   box-sizing: border-box;
   color: #454545;
-  display: block;
   height: 3.077em;
   list-style: none;
   margin: 0;
@@ -28,7 +27,6 @@
   border-right: 1px solid #b3b3b3;
   box-sizing: border-box;
   color: #454545 !important;
-  display: block;
   float: left;
   height: 3.077em;
   list-style: none;
@@ -74,7 +72,6 @@
   box-shadow: 0 4px 4px -3px #171717;
   color: #454545;
   cursor: default;
-  display: block;
   left: -1px;
   line-height: normal;
   margin: 0;
@@ -130,7 +127,6 @@
   left: -7.4em;
 }
 .menu-panel ol {
-  display: block;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -143,7 +139,6 @@
 }
 .menu-panel > ol > li {
   border-left: 1px solid #171717;
-  display: block;
   float: left;
   margin-bottom: 1em;
   margin-right: 1em;
