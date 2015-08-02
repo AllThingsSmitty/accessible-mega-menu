@@ -79,19 +79,19 @@ By default, the accessible mega menu uses the the following CSS classes to defin
 ```javascript
 defaults = {
   // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
-  uuidPrefix: "accessible-megamenu",
+  uuidPrefix: "menu",
 
   // default CSS class used to define the megamenu styling
-  menuClass: "accessible-megamenu",
+  menuClass: "menu",
 
   // default CSS class for a top-level navigation item in the megamenu
-  topNavItemClass: "accessible-megamenu-top-nav-item",
+  topNavItemClass: "menu-top-nav-item",
 
   // default CSS class for a megamenu panel */
-  panelClass: "accessible-megamenu-panel",
+  panelClass: "menu-panel",
 
   // default CSS class for a group of items within a megamenu panel
-  panelGroupClass: "accessible-megamenu-panel-group",
+  panelGroupClass: "menu-panel-group",
 
   // default CSS class for the hover state
   hoverClass: "hover",
