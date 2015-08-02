@@ -1,11 +1,11 @@
 # Accessible Mega Menu
 
-This demonstration shows how to implement a keyboard- and screen reader- accessible mega menu as a jQuery plugin. Content for the links and text within the mega menu comes from the [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG/).
+This demonstrates how to implement a keyboard- and screen reader- accessible mega menu as a jQuery plugin. Content for the links and text within the mega menu comes from the [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG/).
 
 
 ## Keyboard Accessibility
 
-The accessible mega menu supports keyboard interaction modeled after the behavior described in the [WAI-ARIA Menu or Menu bar (widget) design pattern](http://www.w3.org/TR/wai-aria-practices/#menu), however it also respects users' general expectations for the behavior of links in a global navigation. To this end, the accessible mega menu implementation permits tab focus on each of the six top-level menu items.
+The accessible mega menu supports keyboard interaction modeled after the behavior described in the [WAI-ARIA Menu or Menu bar (widget) design pattern](http://www.w3.org/TR/wai-aria-practices/#menu), however it also respects users' general expectations for the behavior of links in a global navigation. The accessible mega menu implementation permits tab focus on each of the six top-level menu items.
 
 * When one of the menu items has focus, pressing the `Enter` key, `Spacebar` or `Down` arrow will open the submenu panel, and pressing the `Left` or `Right` arrow key will shift focus to the adjacent menu item.
 * Links within the submenu panels are included in the tab order when the panel is open. Links can also be navigated with the arrow keys or by typing the first character in the link name, which speeds up keyboard navigation considerably.
@@ -14,16 +14,16 @@ The accessible mega menu supports keyboard interaction modeled after the behavio
 
 ## Screen Reader Accessibility
 
-The accessible mega menu models its use of WAI-ARIA Roles, States, and Properties after those described in the [WAI-ARIA Menu or Menu bar (widget) design pattern](http://www.w3.org/TR/wai-aria-practices/#menu) with some notable exceptions, so that it behaves better with screen reader user expectations for global navigation. We don't use `role="menu"` for the menu container and `role="menuitem"` for each of the links therein; if we do, assistive technology will no longer interpret the links as _links_, but instead as _menu items_, and the links in the global navigation will no longer show up when a screen reader user executes a shortcut command to bring up a list of links in the page.
+The accessible mega menu models its use of WAI-ARIA roles, states, and properties after those described in the [WAI-ARIA Menu or Menu bar (widget) design pattern](http://www.w3.org/TR/wai-aria-practices/#menu) with some notable exceptions, so that it behaves better with screen reader user expectations for global navigation. The accessible mega menu doesn't use `role="menu"` for the menu container and `role="menuitem"` for each of the links therein; if it did, assistive technology will no longer interpret the links as _links_, but instead as _menu items_, and the links in the global navigation will no longer show up when a screen reader user executes a shortcut command to bring up a list of links in the page.
 
-We also want to maintain the semantic structure of the submenu panels in our mega menu; the links are organized into lists and separated by headings. Omitting `role="menu"` and `role="menuitem"` for the global navigation is the safer approach.
+This approach maintains the semantic structure of the submenu panels in the accessible mega menu by omitting `role="menu"` and `role="menuitem"` for the global navigation; the links are organized into lists and separated by headings.
 
 
 ## Usage
 
 ### HTML
 
-The HTML structure for the accessible mega menu is a `nav` element &#8212; or any other container element &#8212; containing a list. Each list item contains a link which is followed by a `div` or any other container element which will serve as the pop up panel.
+The HTML for the accessible mega menu is a `nav` element &#8212; or any other container element &#8212; containing a list. Each list item contains a link which is followed by a `div` or any other container element which will serve as the pop up panel.
 
 The panel can contain any HTML content; in the following example, each panel contains three lists of links. You can explicitly define groups within the panel, between which a user can navigate quickly using the left and right arrow keys; in the following example, the CSS class `.sub-nav-group` identifies a navigable group.
 
@@ -74,7 +74,7 @@ The panel can contain any HTML content; in the following example, each panel con
 </nav>
 ```
 
-By default, accessible-mega-menu uses the the following CSS classes to define the top-level navigation items, panels, groups within the panels, and the hover, focus, and open states. It also defines a prefix for unique ID strings, which are required to indicate the relationship of a top-level navigation item to the panel it controls.
+By default, the accessible mega menu uses the the following CSS classes to define the top-level navigation items, panels, groups within the panels, and the hover, focus, and open states. It also defines a prefix for unique ID strings, which are required to indicate the relationship of a top-level navigation item to the panel it controls.
 
 ```javascript
 defaults = {
@@ -104,14 +104,14 @@ defaults = {
 }
 ```
 
-You can optionally override the defaults to use the CSS classes you may have already defined for your mega menu. 
+You can optionally override the defaults to use the CSS classes you may have already defined for your mega menu.
 
 ### JavaScript
 
 Be sure to include jQuery and the accessible-mega-menu.js plugin script. jQuery 1.10.0 is the highest version that will continue to support IE8.
 
 ```html
-  <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="js/accessible-mega-menu.js"></script>
 ```
 
@@ -358,7 +358,8 @@ Putting it all together, here is the completed example:
   </nav>
 
   <!-- include jQuery -->
-  <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.10.1.min.js">\x3C/script>')</script>
 
   <!-- include the accessible-mega-menu plugin script -->
   <script src="js/accessible-mega-menu.js"></script>
