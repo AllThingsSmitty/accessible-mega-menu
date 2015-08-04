@@ -121,7 +121,7 @@ The following initializes the first nav element in the document as an accessible
 $("nav:first").accessibleMegaMenu({
   // prefix for generated unique id attributes, which are required
   // to indicate aria-owns, aria-controls and aria-labelledby
-  uuidPrefix: "accessible-megamenu",
+  uuidPrefix: "menu",
 
   // CSS class used to define the megamenu styling
   menuClass: "nav-menu",
@@ -220,6 +220,7 @@ This CSS example enables the showing/hiding of and the layout of lists panels in
 /* list item within sub-navigation panel */
 .sub-nav li {
   display: block;
+  line-height: 1.5;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -305,6 +306,7 @@ Putting it all together, here is the completed example:
   /* list item within sub-navigation panel */
   .sub-nav li {
     display: block;
+    line-height: 2;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -312,25 +314,25 @@ Putting it all together, here is the completed example:
 </style>
 </head>
 <body>
-  <nav>
+  <nav class="megamenu">
     <ul class="nav-menu">
       <li class="nav-item">
         <a href="?movie">Music</a>
         <div class="sub-nav">
-          <ul class="sub-nav-group">
+           <ul class="sub-nav-group">
             <li><a href="?music&amp;genre=0">Alternative</a></li>
-            <li><a href="?music&amp;genre=3">Country</a></li>
-            <li>&#8230;</li>
+            <li><a href="?music&amp;genre=3">R&amp;B/Soul</a></li>
+            <li><a href="?music&amp;genre=6">Indie</a></li>
           </ul>
           <ul class="sub-nav-group">
             <li><a href="?music&amp;genre=1">Dance</a></li>
             <li><a href="?music&amp;genre=4">Electronic</a></li>
-            <li>&#8230;</li>
+            <li><a href="?music&amp;genre=7">Metal</a></li>
           </ul>
           <ul class="sub-nav-group">
             <li><a href="?music&amp;genre=2">Hip-Hop/Rap</a></li>
             <li><a href="?music&amp;genre=5">Jazz</a></li>
-            <li>&#8230;</li>
+            <li><a href="?music&amp;genre=8">Latino</a></li>
           </ul>
         </div>
       </li>
@@ -340,17 +342,17 @@ Putting it all together, here is the completed example:
           <ul class="sub-nav-group">
             <li><a href="?movies&amp;genre=10">New Release</a></li>
             <li><a href="?movies&amp;genre=13">Comedy</a></li>
-            <li>&#8230;</li>
+            <li><a href="?movies&amp;genre=16">Action</a></li>
           </ul>
           <ul class="sub-nav-group">
             <li><a href="?movies&amp;genre=11">Drama</a></li>
             <li><a href="?movies&amp;genre=14">Sci-Fi</a></li>
-            <li>&#8230;</li>
+            <li><a href="?movies&amp;genre=17">Adventure</a></li>
           </ul>
           <ul class="sub-nav-group">
             <li><a href="?movies&amp;genre=12">Horror</a></li>
             <li><a href="?movies&amp;genre=15">Documentary</a></li>
-            <li>&#8230;</li>
+            <li><a href="?movies&amp;genre=18">Fantasy</a></li>
           </ul>
         </div>
       </li>
@@ -369,7 +371,7 @@ Putting it all together, here is the completed example:
   $("nav:first").accessibleMegaMenu({
     // prefix for generated unique id attributes, which are required
     // to indicate aria-owns, aria-controls and aria-labelledby
-    uuidPrefix: "accessible-megamenu",
+    uuidPrefix: "menu",
 
     // CSS class used to define the megamenu styling
     menuClass: "nav-menu",
@@ -399,4 +401,4 @@ Putting it all together, here is the completed example:
 
 ## Support
 
-Current versions of Chrome, Firefox, Opera, and Safari; IE8+.
+Current versions of Chrome, Firefox, Opera, and Safari; IE9+.
