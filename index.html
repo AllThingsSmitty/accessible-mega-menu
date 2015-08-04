@@ -210,7 +210,7 @@
       <h3>HTML</h3>
       <p>The HTML for the accessible mega menu is a <code>nav</code> element &#8212; or any other container element &#8212; containing a list. Each list item contains a link which is followed by a <code>div</code> or any other container element which will serve as the pop up panel.</p>
       <p>The panel can contain any HTML content; in the following example, each panel contains three lists of links. You can explicitly define groups within the panel, between which a user can navigate quickly using the left and right arrow keys; in the following example, the CSS class <code>.sub-nav-group</code> identifies a navigable group.</p>
-      <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">nav</span>&gt;
+      <div class="highlight"><pre>&lt;<span class="pl-ent">nav</span>&gt;
   &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav-menu<span class="pl-pds">"</span></span>&gt;
     &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav-item<span class="pl-pds">"</span></span>&gt;
       &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movie<span class="pl-pds">"</span></span>&gt;Music&lt;/<span class="pl-ent">a</span>&gt;
@@ -255,7 +255,7 @@
   &lt;/<span class="pl-ent">ul</span>&gt;
 &lt;/<span class="pl-ent">nav</span>&gt;</pre> </div>
       <p>By default, the accessible mega menu uses the the following CSS classes to define the top-level navigation items, panels, groups within the panels, and the hover, focus, and open states. It also defines a prefix for unique ID strings, which are required to indicate the relationship of a top-level navigation item to the panel it controls.</p>
-      <div class="highlight highlight-javascript"><pre>defaults <span class="pl-k">=</span> {
+      <div class="highlight"><pre>defaults <span class="pl-k">=</span> {
   <span class="pl-c">// unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby</span>
   uuidPrefix<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>menu<span class="pl-pds">"</span></span>,
 
@@ -283,10 +283,10 @@
       <p>You can optionally override the defaults to use the CSS classes you may have already defined for your mega menu.</p>
       <h3>JavaScript</h3>
       <p>Be sure to include jQuery and the accessible-mega-menu.js plugin script. jQuery 1.10.0 is the highest version that will continue to support IE8.</p>
-      <div class="highlight highlight-html"><pre><span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+      <div class="highlight"><pre><span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
 <span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/accessible-mega-menu.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span></pre> </div>
       <p>The following initializes the first nav element in the document as an accessibleMegaMenu, with optional CSS class overrides.</p>
-      <div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">"</span>nav:first<span class="pl-pds">"</span></span>).accessibleMegaMenu({
+      <div class="highlight"><pre>$(<span class="pl-s"><span class="pl-pds">"</span>nav:first<span class="pl-pds">"</span></span>).accessibleMegaMenu({
   <span class="pl-c">// prefix for generated unique id attributes, which are required</span>
   <span class="pl-c">// to indicate aria-owns, aria-controls and aria-labelledby</span>
   uuidPrefix<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>accessible-megamenu<span class="pl-pds">"</span></span>,
@@ -315,7 +315,7 @@
       <h3>CSS</h3>
       <p>AccessibleMegaMenu handles the showing and hiding of panels by adding or removing a CSS class. No inline styles are added to hide elements or create animation between states.</p>
       <p>This CSS example enables the showing/hiding of and the layout of lists panels in the mega menu.</p>
-      <div class="highlight highlight-css"><pre><span class="pl-c">/* mega menu list */</span>
+      <div class="highlight"><pre><span class="pl-c">/* mega menu list */</span>
 <span class="pl-e">.nav-menu</span> {
   <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
   <span class="pl-c1"><span class="pl-c1">list-style</span></span>: <span class="pl-c1">none</span>;
