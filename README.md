@@ -108,7 +108,7 @@ You can optionally override the defaults to use the CSS classes you may have alr
 
 ### JavaScript
 
-Be sure to include jQuery and the accessible-mega-menu.js plugin script. jQuery 1.10.0 is the highest version that will continue to support IE8.
+Be sure to include jQuery and the accessible-mega-menu.js plugin script.
 
 ```html
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

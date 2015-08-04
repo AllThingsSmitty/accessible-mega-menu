@@ -15,9 +15,10 @@ body {
   cursor: default;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-code {
+code, pre {
   background: #f4f4f4;
   border-radius: 3px;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   padding: 3px;
 }
 h1 {
@@ -26,16 +27,17 @@ h1 {
 h2 {
   font-size: 1.5rem;
 }
+h3 {
+  font-size: 1.25rem;
+}
 .layout {
   background: #fff;
-  bottom: 0;
   box-shadow: 0 0 5px 1px #333;
   left: 0;
   margin: auto;
-  padding: 0 10px 10px;
+  padding: 0 15px 15px;
   position: absolute;
   right: 0;
-  top: 0;
   width: 900px;
 }
 :link {
@@ -48,4 +50,35 @@ h2 {
 :link:active,
 :link:hover {
   outline: 0;
+}
+
+/* syntax highlight */
+.highlight {
+  margin-bottom: 16px;
+}
+.highlight pre {
+  background: #f7f7f7;
+  line-height: 1.45;
+  margin-bottom: 0;
+  overflow: auto;
+  padding: 16px;
+  word-break: normal;
+}
+.pl-c {
+  color: #969896;
+}
+.pl-c1, .pl-s .pl-v {
+  color: #0086b3;
+}
+.pl-e, .pl-en {
+  color: #795da3;
+}
+.pl-ent {
+  color: #63a35c;
+}
+.pl-k {
+  color: #a71d5d;
+}
+.pl-pds, .pl-s, .pl-s .pl-pse .pl-s1, .pl-sr, .pl-sr .pl-cce, .pl-sr .pl-sra, .pl-sr .pl-sre {
+  color: #183691;
 }
