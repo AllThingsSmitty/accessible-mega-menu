@@ -13,13 +13,16 @@ body {
   background: #f2f4f5;
   color: #333;
   cursor: default;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 code, pre {
   background: #f4f4f4;
   border-radius: 3px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   padding: 3px;
+}
+code {
+  white-space: nowrap;
 }
 h1 {
   font-size: 1.75rem;
