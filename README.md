@@ -401,4 +401,4 @@ Putting it all together, here is the completed example:
 
 ## Support
 
-Current versions of Chrome, Firefox, Opera, and Safari; IE9+.
+The accessible mega menu works in current versions of Chrome, Firefox, Opera, Safari, Edge, and Internet Explorer 11.
