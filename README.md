@@ -402,3 +402,8 @@ Putting it all together, here is the completed example:
 ## Support
 
 The accessible mega menu works in current versions of Chrome, Firefox, Opera, Safari, Edge, and Internet Explorer 11.
+
+
+### License
+
+[The MIT License (MIT)](http://allthingssmitty.mit-license.org/)
