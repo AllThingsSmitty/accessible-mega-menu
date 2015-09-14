@@ -43,18 +43,6 @@ h3 {
   right: 0;
   width: 900px;
 }
-.skip-nav a {
-  color: #454545;
-  left: -500px;
-  overflow: hidden;
-  position: absolute;
-}
-.skip-nav a:active,
-.skip-nav a:focus {
-  position: static;
-  left: 0;
-  overflow: visible;
-}
 :link {
   color: #225fd7;
 }
@@ -104,4 +92,16 @@ h3 {
 }
 .skip-nav:focus {
   visibility: visible;
+}
+.skip-nav a {
+  color: #454545;
+  left: -500px;
+  overflow: hidden;
+  position: absolute;
+}
+.skip-nav a:active,
+.skip-nav a:focus {
+  position: static;
+  left: 0;
+  overflow: visible;
 }
