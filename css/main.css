@@ -43,6 +43,18 @@ h3 {
   right: 0;
   width: 900px;
 }
+.skip-nav a {
+  color: #454545;
+  left: -500px;
+  overflow: hidden;
+  position: absolute;
+}
+.skip-nav a:active,
+.skip-nav a:focus {
+  position: static;
+  left: 0;
+  overflow: visible;
+}
 :link {
   color: #225fd7;
 }
@@ -84,4 +96,12 @@ h3 {
 }
 .pl-pds, .pl-s, .pl-s .pl-pse .pl-s1, .pl-sr, .pl-sr .pl-cce, .pl-sr .pl-sra, .pl-sr .pl-sre {
   color: #183691;
+}
+.skip-nav {
+  float: left;
+  font-weight: 700;
+  padding: 10px;
+}
+.skip-nav:focus {
+  visibility: visible;
 }
