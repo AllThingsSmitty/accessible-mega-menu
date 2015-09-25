@@ -101,7 +101,7 @@ h3 {
 }
 .skip-nav a:active,
 .skip-nav a:focus {
-  position: static;
   left: 0;
   overflow: visible;
+  position: static;
 }
