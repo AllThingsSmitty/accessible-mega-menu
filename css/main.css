@@ -15,7 +15,8 @@ body {
   cursor: default;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-code, pre {
+code,
+pre {
   background: #f4f4f4;
   border-radius: 3px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -54,37 +55,6 @@ h3 {
 :link:hover {
   outline: 0;
 }
-
-/* syntax highlight */
-.highlight {
-  margin-bottom: 16px;
-}
-.highlight pre {
-  background: #f7f7f7;
-  line-height: 1.45;
-  margin-bottom: 0;
-  overflow: auto;
-  padding: 16px;
-  word-break: normal;
-}
-.pl-c {
-  color: #969896;
-}
-.pl-c1, .pl-s .pl-v {
-  color: #0086b3;
-}
-.pl-e, .pl-en {
-  color: #795da3;
-}
-.pl-ent {
-  color: #63a35c;
-}
-.pl-k {
-  color: #a71d5d;
-}
-.pl-pds, .pl-s, .pl-s .pl-pse .pl-s1, .pl-sr, .pl-sr .pl-cce, .pl-sr .pl-sra, .pl-sr .pl-sre {
-  color: #183691;
-}
 .skip-nav {
   float: left;
   font-weight: 700;
@@ -104,4 +74,43 @@ h3 {
   left: 0;
   overflow: visible;
   position: static;
+}
+
+/* syntax highlight */
+.highlight {
+  margin-bottom: 16px;
+}
+.highlight pre {
+  background: #f7f7f7;
+  line-height: 1.45;
+  margin-bottom: 0;
+  overflow: auto;
+  padding: 16px;
+  word-break: normal;
+}
+.pl-c {
+  color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+  color: #0086b3;
+}
+.pl-e,
+.pl-en {
+  color: #795da3;
+}
+.pl-ent {
+  color: #63a35c;
+}
+.pl-k {
+  color: #a71d5d;
+}
+.pl-pds,
+.pl-pse .pl-s1,
+.pl-s,
+.pl-s .pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+  color: #183691;
 }
