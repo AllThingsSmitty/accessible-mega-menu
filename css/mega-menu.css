@@ -36,7 +36,7 @@
   padding: 0 12px;
   position: relative;
   text-decoration: none;
-  z-index: inherit; 
+  z-index: inherit;
 }
 .menu-top-nav-item a[aria-haspopup]:hover,
 .menu-top-nav-item a[aria-haspopup]:focus {
@@ -95,12 +95,15 @@
   text-decoration: none;
 }
 .menu-panel ol {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
-}
-.menu-panel ol > li {
-  position: relative;
 }
 .menu-panel > ol > li {
   border-left: 1px solid #b3b3b3;
