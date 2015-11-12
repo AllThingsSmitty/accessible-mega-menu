@@ -51,10 +51,6 @@ h3 {
   outline: 2px solid #225fd7;
   text-decoration: underline;
 }
-:link:active,
-:link:hover {
-  outline: 0;
-}
 .skip-nav {
   float: left;
   font-weight: 700;
