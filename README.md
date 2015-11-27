@@ -31,7 +31,7 @@ The panel can contain any HTML content; in the following example, each panel con
 <nav>
   <ul class="nav-menu">
     <li class="nav-item">
-      <a href="?movie">Music</a>
+      <a href="?music">Music</a>
       <div class="sub-nav">
         <ul class="sub-nav-group">
           <li><a href="?music&amp;genre=0">Alternative</a></li>
@@ -51,7 +51,7 @@ The panel can contain any HTML content; in the following example, each panel con
       </div>
     </li>
     <li class="nav-item">
-      <a href="?tv">Movies</a>
+      <a href="?movies">Movies</a>
       <div class="sub-nav">
         <ul class="sub-nav-group">
           <li><a href="?movies&amp;genre=10">New Release</a></li>
@@ -118,31 +118,31 @@ Be sure to include jQuery and the accessible-mega-menu.js plugin script. jQuery 
 The following initializes the first nav element in the document as an accessibleMegaMenu, with optional CSS class overrides.
 
 ```javascript
-$("nav:first").accessibleMegaMenu({
+$('nav:first').accessibleMegaMenu({
   // prefix for generated unique id attributes, which are required
   // to indicate aria-owns, aria-controls and aria-labelledby
-  uuidPrefix: "menu",
+  uuidPrefix: 'megamenu',
 
   // CSS class used to define the megamenu styling
-  menuClass: "nav-menu",
+  menuClass: 'nav-menu',
 
   // CSS class for a top-level navigation item in the megamenu
-  topNavItemClass: "nav-item",
+  topNavItemClass: 'nav-item',
 
   // CSS class for a megamenu panel
-  panelClass: "sub-nav",
+  panelClass: 'sub-nav',
 
   // CSS class for a group of items within a megamenu panel
-  panelGroupClass: "sub-nav-group",
+  panelGroupClass: 'sub-nav-group',
 
   // CSS class for the hover state
-  hoverClass: "hover",
+  hoverClass: 'hover',
 
   // CSS class for the focus state
-  focusClass: "focus",
+  focusClass: 'focus',
 
   // CSS class for the open state
-  openClass: "open"
+  openClass: 'open'
 });
 ```
 ### CSS
@@ -317,7 +317,7 @@ Putting it all together, here is the completed example:
   <nav class="megamenu">
     <ul class="nav-menu">
       <li class="nav-item">
-        <a href="?movie">Music</a>
+        <a href="?music">Music</a>
         <div class="sub-nav">
            <ul class="sub-nav-group">
             <li><a href="?music&amp;genre=0">Alternative</a></li>
@@ -337,7 +337,7 @@ Putting it all together, here is the completed example:
         </div>
       </li>
       <li class="nav-item">
-        <a href="?tv">Movies</a>
+        <a href="?movies">Movies</a>
         <div class="sub-nav">
           <ul class="sub-nav-group">
             <li><a href="?movies&amp;genre=10">New Release</a></li>
@@ -368,31 +368,31 @@ Putting it all together, here is the completed example:
 
   <!-- initialize a selector as an accessible-mega-menu -->
   <script>
-  $("nav:first").accessibleMegaMenu({
+  $('nav:first').accessibleMegaMenu({
     // prefix for generated unique id attributes, which are required
     // to indicate aria-owns, aria-controls and aria-labelledby
-    uuidPrefix: "menu",
+    uuidPrefix: 'menu',
 
     // CSS class used to define the megamenu styling
-    menuClass: "nav-menu",
+    menuClass: 'nav-menu',
 
     // CSS class for a top-level navigation item in the megamenu
-    topNavItemClass: "nav-item",
+    topNavItemClass: 'nav-item',
 
     // CSS class for a megamenu panel
-    panelClass: "sub-nav",
+    panelClass: 'sub-nav',
 
     // CSS class for a group of items within a megamenu panel
-    panelGroupClass: "sub-nav-group",
+    panelGroupClass: 'sub-nav-group',
 
     // CSS class for the hover state
-    hoverClass: "hover",
+    hoverClass: 'hover',
 
     // CSS class for the focus state
-    focusClass: "focus",
+    focusClass: 'focus',
 
     // CSS class for the open state
-    openClass: "open"
+    openClass: 'open'
   });
   </script>
 </body>
