@@ -15,7 +15,7 @@ if (jQuery) {
 
 // Polyfill to fix "skip to content" link
 // https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
-window.addEventListener("hashchange", function (event) {
+window.addEventListener('hashchange', function (event) {
   var element = document.getElementById(location.hash.substring(1));
   if (element) {
     if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {

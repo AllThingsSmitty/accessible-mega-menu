@@ -1,16 +1,16 @@
 /*global jQuery */
 (function ($, window, document) {
   'use strict';
-  var pluginName = "accessibleMegaMenu",
+  var pluginName = 'accessibleMegaMenu',
     defaults = {
-      uuidPrefix: "menu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
-      menuClass: "menu", // default CSS class used to define the megamenu styling
-      topNavItemClass: "menu-top-nav-item", // default CSS class for a top-level navigation item in the megamenu
-      panelClass: "menu-panel", // default CSS class for a megamenu panel
-      panelGroupClass: "menu-panel-group", // default CSS class for a group of items within a megamenu panel
-      hoverClass: "hover", // default CSS class for the hover state
-      focusClass: "focus", // default CSS class for the focus state
-      openClass: "open" // default CSS class for the open state
+      uuidPrefix: 'menu', // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
+      menuClass: 'menu', // default CSS class used to define the megamenu styling
+      topNavItemClass: 'menu-top-nav-item', // default CSS class for a top-level navigation item in the megamenu
+      panelClass: 'menu-panel', // default CSS class for a megamenu panel
+      panelGroupClass: 'menu-panel-group', // default CSS class for a group of items within a megamenu panel
+      hoverClass: 'hover', // default CSS class for the hover state
+      focusClass: 'focus', // default CSS class for the focus state
+      openClass: 'open' // default CSS class for the open state
     },
     Keyboard = {
       BACKSPACE: 8,
@@ -30,54 +30,54 @@
       TAB: 9,
       UP: 38,
       keyMap: {
-        48: "0",
-        49: "1",
-        50: "2",
-        51: "3",
-        52: "4",
-        53: "5",
-        54: "6",
-        55: "7",
-        56: "8",
-        57: "9",
-        59: ";",
-        65: "a",
-        66: "b",
-        67: "c",
-        68: "d",
-        69: "e",
-        70: "f",
-        71: "g",
-        72: "h",
-        73: "i",
-        74: "j",
-        75: "k",
-        76: "l",
-        77: "m",
-        78: "n",
-        79: "o",
-        80: "p",
-        81: "q",
-        82: "r",
-        83: "s",
-        84: "t",
-        85: "u",
-        86: "v",
-        87: "w",
-        88: "x",
-        89: "y",
-        90: "z",
-        96: "0",
-        97: "1",
-        98: "2",
-        99: "3",
-        100: "4",
-        101: "5",
-        102: "6",
-        103: "7",
-        104: "8",
-        105: "9",
-        190: "."
+        48: '0',
+        49: '1',
+        50: '2',
+        51: '3',
+        52: '4',
+        53: '5',
+        54: '6',
+        55: '7',
+        56: '8',
+        57: '9',
+        59: ';',
+        65: 'a',
+        66: 'b',
+        67: 'c',
+        68: 'd',
+        69: 'e',
+        70: 'f',
+        71: 'g',
+        72: 'h',
+        73: 'i',
+        74: 'j',
+        75: 'k',
+        76: 'l',
+        77: 'm',
+        78: 'n',
+        79: 'o',
+        80: 'p',
+        81: 'q',
+        82: 'r',
+        83: 's',
+        84: 't',
+        85: 'u',
+        86: 'v',
+        87: 'w',
+        88: 'x',
+        89: 'y',
+        90: 'z',
+        96: '0',
+        97: '1',
+        98: '2',
+        99: '3',
+        100: '4',
+        101: '5',
+        102: '6',
+        103: '7',
+        104: '8',
+        105: '9',
+        190: '.'
       }
     };
 
@@ -103,8 +103,8 @@
     /* private attributes and methods ------------------------ */
     var uuid = 0,
       keydownTimeoutDuration = 1000,
-      keydownSearchString = "",
-      isTouch = typeof window.hasOwnProperty === "function" && !!window.hasOwnProperty("ontouchstart"),
+      keydownSearchString = '',
+      isTouch = typeof window.hasOwnProperty === 'function' && !!window.hasOwnProperty('ontouchstart'),
       _getPlugin,
       _addUniqueId,
       _togglePanel,
@@ -128,7 +128,7 @@
      * @private
      */
     _getPlugin = function (element) {
-      return $(element).closest(':data(plugin_' + pluginName + ')').data("plugin_" + pluginName);
+      return $(element).closest(':data(plugin_' + pluginName + ')').data('plugin_' + pluginName);
     };
 
     /**
@@ -144,8 +144,8 @@
     _addUniqueId = function (element) {
       element = $(element);
       var settings = this.settings;
-      if (!element.attr("id")) {
-        element.attr("id", settings.uuidPrefix + "-" + new Date().getTime() + "-" + (++uuid));
+      if (!element.attr('id')) {
+        element.attr('id', settings.uuidPrefix + '-' + new Date().getTime() + '-' + (++uuid));
       }
     };
 
@@ -375,7 +375,7 @@
         regex,
         isTopNavItem = (topli.length === 1 && panel.length === 0);
 
-      if (target.is("input:focus, select:focus, textarea:focus, button:focus")) {
+      if (target.is('input:focus, select:focus, textarea:focus, button:focus')) {
         // if the event target is a form element we should handle keydown normally
         return;
       }
@@ -397,7 +397,7 @@
           found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').focus().length === 1);
         }
 
-        if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
+        if (!found && window.opera && opera.toString() === '[object Opera]' && (event.ctrlKey || event.metaKey)) {
           tabbables = $(':tabbable');
           i = tabbables.index(target);
           found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
@@ -421,7 +421,7 @@
           found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').focus().length === 1);
         }
 
-        if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
+        if (!found && window.opera && opera.toString() === '[object Opera]' && (event.ctrlKey || event.metaKey)) {
           tabbables = $(':tabbable');
           i = tabbables.index(target);
           found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
@@ -475,7 +475,7 @@
           found = (tabbables.filter(':lt(' + i + '):last').focus().length === 1);
         } else if (!event.shiftKey && i < tabbables.length - 1) {
           found = (tabbables.filter(':gt(' + i + '):first').focus().length === 1);
-        } else if (window.opera && opera.toString() === "[object Opera]") {
+        } else if (window.opera && opera.toString() === '[object Opera]') {
           tabbables = $(':tabbable');
           i = tabbables.index(target);
           if (event.shiftKey) {
@@ -568,7 +568,7 @@
      * @private
      */
     _mouseDownHandler = function (event) {
-      if ($(event.target).is(this.settings.panelClass) || $(event.target).closest(":focusable").length) {
+      if ($(event.target).is(this.settings.panelClass) || $(event.target).closest(':focusable').length) {
         this.mouseFocused = true;
       }
       this.mouseTimeoutID = setTimeout(function () {
@@ -654,57 +654,57 @@
         this.menu = menu;
         this.topnavitems = topnavitems;
 
-        nav.attr("role", "navigation");
+        nav.attr('role', 'navigation');
         menu.addClass(settings.menuClass);
         topnavitems.each(function (i, topnavitem) {
           var topnavitemlink, topnavitempanel;
           topnavitem = $(topnavitem);
           topnavitem.addClass(settings.topNavItemClass);
-          topnavitemlink = topnavitem.find(":tabbable:first");
-          topnavitempanel = topnavitem.children(":not(:tabbable):last");
+          topnavitemlink = topnavitem.find(':tabbable:first');
+          topnavitempanel = topnavitem.children(':not(:tabbable):last');
           _addUniqueId.call(that, topnavitemlink);
           if (topnavitempanel.length) {
             _addUniqueId.call(that, topnavitempanel);
             topnavitemlink.attr({
-              "aria-haspopup": true,
-              "aria-controls": topnavitempanel.attr("id"),
-              "aria-expanded": false
+              'aria-haspopup': true,
+              'aria-controls': topnavitempanel.attr('id'),
+              'aria-expanded': false
             });
 
             topnavitempanel.attr({
-                "role": "group",
-                "aria-expanded": false,
-                "aria-hidden": true
+                'role': 'group',
+                'aria-expanded': false,
+                'aria-hidden': true
               })
               .addClass(settings.panelClass)
-              .not("[aria-labelledby]")
-              .attr("aria-labelledby", topnavitemlink.attr("id"));
+              .not('[aria-labelledby]')
+              .attr('aria-labelledby', topnavitemlink.attr('id'));
           }
         });
 
-        this.panels = menu.find("." + settings.panelClass);
+        this.panels = menu.find('.' + settings.panelClass);
 
-        menu.on("focusin.menu", ":focusable, ." + settings.panelClass, $.proxy(_focusInHandler, this))
-          .on("focusout.menu", ":focusable, ." + settings.panelClass, $.proxy(_focusOutHandler, this))
-          .on("keydown.menu", $.proxy(_keyDownHandler, this))
-          .on("mouseover.menu", $.proxy(_mouseOverHandler, this))
-          .on("mouseout.menu", $.proxy(_mouseOutHandler, this))
-          .on("mousedown.menu", $.proxy(_mouseDownHandler, this));
+        menu.on('focusin.menu', ':focusable, .' + settings.panelClass, $.proxy(_focusInHandler, this))
+          .on('focusout.menu', ':focusable, .' + settings.panelClass, $.proxy(_focusOutHandler, this))
+          .on('keydown.menu', $.proxy(_keyDownHandler, this))
+          .on('mouseover.menu', $.proxy(_mouseOverHandler, this))
+          .on('mouseout.menu', $.proxy(_mouseOutHandler, this))
+          .on('mousedown.menu', $.proxy(_mouseDownHandler, this));
 
         if (isTouch) {
-          menu.on("touchstart.menu", $.proxy(_clickHandler, this));
+          menu.on('touchstart.menu', $.proxy(_clickHandler, this));
         }
 
-        menu.find("hr").attr("role", "separator");
+        menu.find('hr').attr('role', 'separator');
 
         if ($(document.activeElement).closest(menu).length) {
-          $(document.activeElement).trigger("focusin.menu");
+          $(document.activeElement).trigger('focusin.menu');
         }
       },
 
       /**
        * @desc Get default values
-       * @example $(selector).accessibleMegaMenu("getDefaults");
+       * @example $(selector).accessibleMegaMenu('getDefaults');
        * @return {object}
        * @memberof jQuery.fn.accessibleMegaMenu
        * @instance
@@ -715,7 +715,7 @@
 
       /**
        * @desc Get any option set to plugin using its name (as string)
-       * @example $(selector).accessibleMegaMenu("getOption", some_option);
+       * @example $(selector).accessibleMegaMenu('getOption', some_option);
        * @param {string} opt
        * @return {string}
        * @memberof jQuery.fn.accessibleMegaMenu
@@ -727,7 +727,7 @@
 
       /**
        * @desc Get all options
-       * @example $(selector).accessibleMegaMenu("getAllOptions");
+       * @example $(selector).accessibleMegaMenu('getAllOptions');
        * @return {object}
        * @memberof jQuery.fn.accessibleMegaMenu
        * @instance
@@ -738,7 +738,7 @@
 
       /**
        * @desc Set option
-       * @example $(selector).accessibleMegaMenu("setOption", "option_name",  "option_value",  reinitialize);
+       * @example $(selector).accessibleMegaMenu('setOption', 'option_name',  'option_value',  reinitialize);
        * @param {string} opt - Option name
        * @param {string} val - Option value
        * @param {boolean} [reinitialize] - boolean to re-initialize the menu.
@@ -756,8 +756,8 @@
 
   $.fn[pluginName] = function (options) {
     return this.each(function () {
-      if (!$.data(this, "plugin_" + pluginName)) {
-        $.data(this, "plugin_" + pluginName, new $.fn[pluginName].AccessibleMegaMenu(this, options));
+      if (!$.data(this, 'plugin_' + pluginName)) {
+        $.data(this, 'plugin_' + pluginName, new $.fn[pluginName].AccessibleMegaMenu(this, options));
       }
     });
   };
@@ -772,7 +772,7 @@
    */
   function visible(element) {
     return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function () {
-      return $.css(this, "visibility") === "hidden";
+      return $.css(this, 'visibility') === 'hidden';
     }).length;
   }
 
@@ -782,24 +782,24 @@
   function focusable(element, isTabIndexNotNaN) {
     var map, mapName, img,
       nodeName = element.nodeName.toLowerCase();
-    if ("area" === nodeName) {
+    if ('area' === nodeName) {
       map = element.parentNode;
       mapName = map.name;
-      if (!element.href || !mapName || map.nodeName.toLowerCase() !== "map") {
+      if (!element.href || !mapName || map.nodeName.toLowerCase() !== 'map') {
         return false;
       }
-      img = $("img[usemap=#" + mapName + "]")[0];
+      img = $('img[usemap=#' + mapName + ']')[0];
       return !!img && visible(img);
     }
     return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled :
-        "a" === nodeName ?
+        'a' === nodeName ?
         element.href || isTabIndexNotNaN :
         isTabIndexNotNaN) &&
       // the element and all of its ancestors must be visible
       visible(element);
   }
 
-  $.extend($.expr[":"], {
+  $.extend($.expr[':'], {
     data: $.expr.createPseudo ? $.expr.createPseudo(function (dataName) {
         return function (elem) {
           return !!$.data(elem, dataName);
@@ -810,11 +810,11 @@
       },
 
     focusable: function (element) {
-      return focusable(element, !isNaN($.attr(element, "tabindex")));
+      return focusable(element, !isNaN($.attr(element, 'tabindex')));
     },
 
     tabbable: function (element) {
-      var tabIndex = $.attr(element, "tabindex"),
+      var tabIndex = $.attr(element, 'tabindex'),
         isTabIndexNaN = isNaN(tabIndex);
       return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
     }
