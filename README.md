@@ -2,6 +2,8 @@
 
 This demonstrates how to implement a keyboard- and screen reader- accessible mega menu as a jQuery plugin. Content for the links and text within the mega menu comes from the [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG/).
 
+![Mega menu image](img/mega-menu.gif)
+
 
 ## Keyboard Accessibility
 
@@ -115,7 +117,7 @@ Be sure to include jQuery and the accessible-mega-menu.js plugin script. jQuery 
   <script src="js/accessible-mega-menu.js"></script>
 ```
 
-The following initializes the first nav element in the document as an accessibleMegaMenu, with optional CSS class overrides.
+The following initializes the first nav element in the document as an `accessibleMegaMenu`, with optional CSS class overrides.
 
 ```javascript
 $('nav:first').accessibleMegaMenu({
@@ -147,7 +149,7 @@ $('nav:first').accessibleMegaMenu({
 ```
 ### CSS
 
-AccessibleMegaMenu handles the showing and hiding of panels by adding or removing a CSS class. No inline styles are added to hide elements or create animation between states.
+`AccessibleMegaMenu` handles the showing and hiding of panels by adding or removing a CSS class. No inline styles are added to hide elements or create animation between states.
 
 This CSS example enables the showing/hiding of and the layout of lists panels in the mega menu.
 
