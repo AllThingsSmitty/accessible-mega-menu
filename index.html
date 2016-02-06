@@ -288,7 +288,7 @@
       <p>Be sure to include jQuery and the accessible-mega-menu.js plugin script. jQuery 1.10.0 is the highest version that will continue to support IE8.</p>
       <div class="highlight"><pre><span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
 <span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/accessible-mega-menu.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span></pre> </div>
-      <p>The following initializes the first nav element in the document as an accessibleMegaMenu, with optional CSS class overrides.</p>
+      <p>The following initializes the first nav element in the document as an <code>accessibleMegaMenu</code>, with optional CSS class overrides.</p>
       <div class="highlight"><pre>$(<span class="pl-s"><span class="pl-pds">"</span>nav:first<span class="pl-pds">"</span></span>).accessibleMegaMenu({
   <span class="pl-c">// prefix for generated unique id attributes, which are required</span>
   <span class="pl-c">// to indicate aria-owns, aria-controls and aria-labelledby</span>
@@ -316,7 +316,7 @@
   openClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>open<span class="pl-pds">'</span></span>
 });</pre> </div>
       <h3>CSS</h3>
-      <p>`AccessibleMegaMenu` handles the showing and hiding of panels by adding or removing a CSS class. No inline styles are added to hide elements or create animation between states.</p>
+      <p><code>AccessibleMegaMenu</code> handles the showing and hiding of panels by adding or removing a CSS class. No inline styles are added to hide elements or create animation between states.</p>
       <p>This CSS example enables the showing/hiding of and the layout of lists panels in the mega menu.</p>
       <div class="highlight"><pre><span class="pl-c">/* mega menu list */</span>
 <span class="pl-e">.nav-menu</span> {
