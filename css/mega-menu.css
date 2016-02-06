@@ -169,6 +169,11 @@
 .menu-panel-group > h3 > a:focus {
   color: #333;
 }
+.menu-panel-group ol {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 .menu-panel-group li > a {
   padding-left: 2.5em;
   text-indent: -2.5em;
