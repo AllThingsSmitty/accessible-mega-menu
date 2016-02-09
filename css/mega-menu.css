@@ -23,13 +23,13 @@
 .menu-top-nav-item {
   border-right: 1px solid #b3b3b3;
   box-sizing: border-box;
-  color: #454545 !important;
+  color: #454545;
   float: left;
   position: relative;
   text-shadow: 0 1px 0 #fff;
 }
 .menu-top-nav-item a[aria-haspopup] {
-  color: #454545 !important;
+  color: #454545;
   display: block;
   height: 3em;
   line-height: 3em;
@@ -40,7 +40,7 @@
 }
 .menu-top-nav-item a[aria-haspopup]:hover,
 .menu-top-nav-item a[aria-haspopup]:focus {
-  color: #333 !important;
+  color: #333;
   outline-offset: -1px;
 }
 .menu-top-nav-item a[aria-haspopup]:hover,
