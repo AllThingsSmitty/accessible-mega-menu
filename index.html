@@ -213,183 +213,199 @@
       <h3>HTML</h3>
       <p>The HTML for the accessible mega menu is a <code>nav</code> element &#8212; or any other container element &#8212; containing a list. Each list item contains a link which is followed by a <code>div</code> or any other container element which will serve as the pop up panel.</p>
       <p>The panel can contain any HTML content; in the following example, each panel contains three lists of links. You can explicitly define groups within the panel, between which a user can navigate quickly using the left and right arrow keys; in the following example, the CSS class <code>.sub-nav-group</code> identifies a navigable group.</p>
-      <div class="highlight"><pre>&lt;<span class="pl-ent">nav</span>&gt;
-  &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav-menu<span class="pl-pds">"</span></span>&gt;
-    &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav-item<span class="pl-pds">"</span></span>&gt;
-      &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-pds">"</span></span>&gt;Music&lt;/<span class="pl-ent">a</span>&gt;
-      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav<span class="pl-pds">"</span></span>&gt;
-        &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=0<span class="pl-pds">"</span></span>&gt;Alternative&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=3<span class="pl-pds">"</span></span>&gt;Country&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
-        &lt;/<span class="pl-ent">ul</span>&gt;
-        &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=1<span class="pl-pds">"</span></span>&gt;Dance&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=4<span class="pl-pds">"</span></span>&gt;Electronic&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
-        &lt;/<span class="pl-ent">ul</span>&gt;
-        &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=2<span class="pl-pds">"</span></span>&gt;Hip-Hop/Rap&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=5<span class="pl-pds">"</span></span>&gt;Jazz&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
-        &lt;/<span class="pl-ent">ul</span>&gt;
-      &lt;/<span class="pl-ent">div</span>&gt;
-    &lt;/<span class="pl-ent">li</span>&gt;
-    &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav-item<span class="pl-pds">"</span></span>&gt;
-      &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-pds">"</span></span>&gt;Movies&lt;/<span class="pl-ent">a</span>&gt;
-      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav<span class="pl-pds">"</span></span>&gt;
-        &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=10<span class="pl-pds">"</span></span>&gt;New Release&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=13<span class="pl-pds">"</span></span>&gt;Comedy&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
-        &lt;/<span class="pl-ent">ul</span>&gt;
-        &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=11<span class="pl-pds">"</span></span>&gt;Drama&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=14<span class="pl-pds">"</span></span>&gt;Sci-Fi&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
-        &lt;/<span class="pl-ent">ul</span>&gt;
-        &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=12<span class="pl-pds">"</span></span>&gt;Horror&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=15<span class="pl-pds">"</span></span>&gt;Documentary&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-          &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
-        &lt;/<span class="pl-ent">ul</span>&gt;
-      &lt;/<span class="pl-ent">div</span>&gt;
-    &lt;/<span class="pl-ent">li</span>&gt;
-  &lt;/<span class="pl-ent">ul</span>&gt;
-&lt;/<span class="pl-ent">nav</span>&gt;</pre> </div>
+      <div class="highlight">
+        <pre>&lt;<span class="pl-ent">nav</span>&gt;
+          &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav-menu<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav-item<span class="pl-pds">"</span></span>&gt;
+              &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-pds">"</span></span>&gt;Music&lt;/<span class="pl-ent">a</span>&gt;
+              &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav<span class="pl-pds">"</span></span>&gt;
+                &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=0<span class="pl-pds">"</span></span>&gt;Alternative&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=3<span class="pl-pds">"</span></span>&gt;Country&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
+                &lt;/<span class="pl-ent">ul</span>&gt;
+                &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=1<span class="pl-pds">"</span></span>&gt;Dance&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=4<span class="pl-pds">"</span></span>&gt;Electronic&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
+                &lt;/<span class="pl-ent">ul</span>&gt;
+                &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=2<span class="pl-pds">"</span></span>&gt;Hip-Hop/Rap&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?music<span class="pl-c1">&amp;amp;</span>genre=5<span class="pl-pds">"</span></span>&gt;Jazz&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
+                &lt;/<span class="pl-ent">ul</span>&gt;
+              &lt;/<span class="pl-ent">div</span>&gt;
+            &lt;/<span class="pl-ent">li</span>&gt;
+            &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav-item<span class="pl-pds">"</span></span>&gt;
+              &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-pds">"</span></span>&gt;Movies&lt;/<span class="pl-ent">a</span>&gt;
+              &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav<span class="pl-pds">"</span></span>&gt;
+                &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=10<span class="pl-pds">"</span></span>&gt;New Release&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=13<span class="pl-pds">"</span></span>&gt;Comedy&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
+                &lt;/<span class="pl-ent">ul</span>&gt;
+                &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=11<span class="pl-pds">"</span></span>&gt;Drama&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=14<span class="pl-pds">"</span></span>&gt;Sci-Fi&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
+                &lt;/<span class="pl-ent">ul</span>&gt;
+                &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sub-nav-group<span class="pl-pds">"</span></span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=12<span class="pl-pds">"</span></span>&gt;Horror&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>?movies<span class="pl-c1">&amp;amp;</span>genre=15<span class="pl-pds">"</span></span>&gt;Documentary&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+                  &lt;<span class="pl-ent">li</span>&gt;<span class="pl-c1">&amp;#8230;</span>&lt;/<span class="pl-ent">li</span>&gt;
+                &lt;/<span class="pl-ent">ul</span>&gt;
+              &lt;/<span class="pl-ent">div</span>&gt;
+            &lt;/<span class="pl-ent">li</span>&gt;
+          &lt;/<span class="pl-ent">ul</span>&gt;
+        &lt;/<span class="pl-ent">nav</span>&gt;</pre>
+      </div>
       <p>By default, the accessible mega menu uses the the following CSS classes to define the top-level navigation items, panels, groups within the panels, and the hover, focus, and open states. It also defines a prefix for unique ID strings, which are required to indicate the relationship of a top-level navigation item to the panel it controls.</p>
-      <div class="highlight"><pre>defaults <span class="pl-k">=</span> {
-  <span class="pl-c">// unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby</span>
-  uuidPrefix<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu<span class="pl-pds">'</span></span>,
+      <div class="highlight">
+        <pre>defaults <span class="pl-k">=</span> {
+          <span class="pl-c">// unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby</span>
+          uuidPrefix<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// default CSS class used to define the megamenu styling</span>
-  menuClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// default CSS class used to define the megamenu styling</span>
+          menuClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// default CSS class for a top-level navigation item in the megamenu</span>
-  topNavItemClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu-top-nav-item<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// default CSS class for a top-level navigation item in the megamenu</span>
+          topNavItemClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu-top-nav-item<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// default CSS class for a megamenu panel */</span>
-  panelClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu-panel<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// default CSS class for a megamenu panel */</span>
+          panelClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu-panel<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// default CSS class for a group of items within a megamenu panel</span>
-  panelGroupClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu-panel-group<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// default CSS class for a group of items within a megamenu panel</span>
+          panelGroupClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>menu-panel-group<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// default CSS class for the hover state</span>
-  hoverClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hover<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// default CSS class for the hover state</span>
+          hoverClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hover<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// default CSS class for the focus state</span>
-  focusClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>focus<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// default CSS class for the focus state</span>
+          focusClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>focus<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// default CSS class for the open state</span>
-  openClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>open<span class="pl-pds">'</span></span> 
-}</pre> </div>
+          <span class="pl-c">// default CSS class for the open state</span>
+          openClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>open<span class="pl-pds">'</span></span> 
+        }</pre>
+      </div>
       <p>You can optionally override the defaults to use the CSS classes you may have already defined for your mega menu.</p>
       <h3>JavaScript</h3>
       <p>Be sure to include jQuery and the accessible-mega-menu.js plugin script. jQuery 1.10.0 is the highest version that will continue to support IE8.</p>
-      <div class="highlight"><pre><span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
-<span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/accessible-mega-menu.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span></pre> </div>
+      <div class="highlight">
+        <pre>
+          <span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+          <span class="pl-s1">  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/accessible-mega-menu.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+        </pre>
+      </div>
       <p>The following initializes the first nav element in the document as an <code>accessibleMegaMenu</code>, with optional CSS class overrides.</p>
-      <div class="highlight"><pre>$(<span class="pl-s"><span class="pl-pds">"</span>nav:first<span class="pl-pds">"</span></span>).accessibleMegaMenu({
-  <span class="pl-c">// prefix for generated unique id attributes, which are required</span>
-  <span class="pl-c">// to indicate aria-owns, aria-controls and aria-labelledby</span>
-  uuidPrefix<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>accessible-megamenu<span class="pl-pds">"</span></span>,
+      <div class="highlight">
+        <pre>
+          $(<span class="pl-s"><span class="pl-pds">"</span>nav:first<span class="pl-pds">"</span></span>).accessibleMegaMenu({
+          <span class="pl-c">// prefix for generated unique id attributes, which are required</span>
+          <span class="pl-c">// to indicate aria-owns, aria-controls and aria-labelledby</span>
+        uuidPrefix<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>accessible-megamenu<span class="pl-pds">"</span></span>,
 
-  <span class="pl-c">// CSS class used to define the megamenu styling</span>
-  menuClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>nav-menu<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// CSS class used to define the megamenu styling</span>
+          menuClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>nav-menu<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// CSS class for a top-level navigation item in the megamenu</span>
-  topNavItemClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>nav-item<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// CSS class for a top-level navigation item in the megamenu</span>
+          topNavItemClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>nav-item<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// CSS class for a megamenu panel</span>
-  panelClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sub-nav<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// CSS class for a megamenu panel</span>
+          panelClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sub-nav<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// CSS class for a group of items within a megamenu panel</span>
-  panelGroupClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sub-nav-group<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// CSS class for a group of items within a megamenu panel</span>
+          panelGroupClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sub-nav-group<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// CSS class for the hover state</span>
-  hoverClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hover<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// CSS class for the hover state</span>
+          hoverClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hover<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// CSS class for the focus state</span>
-  focusClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>focus<span class="pl-pds">'</span></span>,
+          <span class="pl-c">// CSS class for the focus state</span>
+          focusClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>focus<span class="pl-pds">'</span></span>,
 
-  <span class="pl-c">// CSS class for the open state</span>
-  openClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>open<span class="pl-pds">'</span></span>
-});</pre> </div>
+          <span class="pl-c">// CSS class for the open state</span>
+          openClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>open<span class="pl-pds">'</span></span>
+        });
+        </pre>
+      </div>
       <h3>CSS</h3>
       <p><code>AccessibleMegaMenu</code> handles the showing and hiding of panels by adding or removing a CSS class. No inline styles are added to hide elements or create animation between states.</p>
       <p>This CSS example enables the showing/hiding of and the layout of lists panels in the mega menu.</p>
-      <div class="highlight"><pre><span class="pl-c">/* mega menu list */</span>
-<span class="pl-e">.nav-menu</span> {
-  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
-  <span class="pl-c1"><span class="pl-c1">list-style</span></span>: <span class="pl-c1">none</span>;
-  <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>;
-  <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
-  <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">relative</span>;
-  <span class="pl-c1"><span class="pl-c1">z-index</span></span>: <span class="pl-c1">15</span>;
-}
+      <div class="highlight">
+        <pre>
+          <span class="pl-c">/* mega menu list */</span>
+          <span class="pl-e">.nav-menu</span> {
+            <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
+            <span class="pl-c1"><span class="pl-c1">list-style</span></span>: <span class="pl-c1">none</span>;
+            <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>;
+            <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
+            <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">relative</span>;
+            <span class="pl-c1"><span class="pl-c1">z-index</span></span>: <span class="pl-c1">15</span>;
+          }
 
-<span class="pl-c">/* a top level navigation item in the mega menu */</span>
-<span class="pl-e">.nav-item</span> {
-  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline-block</span>;
-  <span class="pl-c1"><span class="pl-c1">list-style</span></span>: <span class="pl-c1">none</span>;
-  <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>;
-  <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
-}
+          <span class="pl-c">/* a top level navigation item in the mega menu */</span>
+          <span class="pl-e">.nav-item</span> {
+            <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline-block</span>;
+            <span class="pl-c1"><span class="pl-c1">list-style</span></span>: <span class="pl-c1">none</span>;
+            <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>;
+            <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
+          }
 
-<span class="pl-c">/* first descendant link within a top level navigation item */</span>
-<span class="pl-e">.nav-item</span> &gt; <span class="pl-ent">a</span> {
-  <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">transparent</span>;
-  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline-block</span>;
-  <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span> <span class="pl-c1">0</span> <span class="pl-c1">-1<span class="pl-k">px</span></span> <span class="pl-c1">0</span>;
-  <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0.5<span class="pl-k">em</span></span> <span class="pl-c1">1<span class="pl-k">em</span></span>;
-  <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">relative</span>;
-}
+          <span class="pl-c">/* first descendant link within a top level navigation item */</span>
+          <span class="pl-e">.nav-item</span> &gt; <span class="pl-ent">a</span> {
+            <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">transparent</span>;
+            <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline-block</span>;
+            <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span> <span class="pl-c1">0</span> <span class="pl-c1">-1<span class="pl-k">px</span></span> <span class="pl-c1">0</span>;
+            <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0.5<span class="pl-k">em</span></span> <span class="pl-c1">1<span class="pl-k">em</span></span>;
+            <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">relative</span>;
+          }
 
-<span class="pl-c">/* focus/open states of first descendant link within a top level navigation item */</span>
-<span class="pl-e">.nav-item</span> &gt; <span class="pl-ent">a</span><span class="pl-e">:focus</span>,
-<span class="pl-e">.nav-item</span> &gt; <span class="pl-ent">a</span><span class="pl-e">.open</span> {
-  <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#dedede</span>;
-}
+          <span class="pl-c">/* focus/open states of first descendant link within a top level navigation item */</span>
+          <span class="pl-e">.nav-item</span> &gt; <span class="pl-ent">a</span><span class="pl-e">:focus</span>,
+          <span class="pl-e">.nav-item</span> &gt; <span class="pl-ent">a</span><span class="pl-e">.open</span> {
+            <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#dedede</span>;
+          }
 
-<span class="pl-c">/* open state of first descendant link within a top level </span>
-<span class="pl-c">   navigation item */</span>
-<span class="pl-e">.nav-item</span> &gt; <span class="pl-ent">a</span><span class="pl-e">.open</span> {
-  <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#fff</span>;
-  <span class="pl-c1"><span class="pl-c1">border-bottom</span></span>: <span class="pl-c1">none</span>;
-  <span class="pl-c1"><span class="pl-c1">z-index</span></span>: <span class="pl-c1">1</span>;
-}
+          <span class="pl-c">/* open state of first descendant link within a top level </span>
+          <span class="pl-c">   navigation item */</span>
+          <span class="pl-e">.nav-item</span> &gt; <span class="pl-ent">a</span><span class="pl-e">.open</span> {
+            <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#fff</span>;
+            <span class="pl-c1"><span class="pl-c1">border-bottom</span></span>: <span class="pl-c1">none</span>;
+            <span class="pl-c1"><span class="pl-c1">z-index</span></span>: <span class="pl-c1">1</span>;
+          }
 
-<span class="pl-c">/* sub-navigation panel */</span>
-<span class="pl-e">.sub-nav</span> {
-  <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#fff</span>;
-  <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#dedede</span>;
-  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">none</span>;
-  <span class="pl-c1"><span class="pl-c1">margin-top</span></span>: <span class="pl-c1">-1<span class="pl-k">px</span></span>;
-  <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0.5<span class="pl-k">em</span></span> <span class="pl-c1">1<span class="pl-k">em</span></span>;
-  <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">absolute</span>;
-  <span class="pl-c1"><span class="pl-c1">top</span></span>: <span class="pl-c1">2.2<span class="pl-k">em</span></span>;
-}
+          <span class="pl-c">/* sub-navigation panel */</span>
+          <span class="pl-e">.sub-nav</span> {
+            <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#fff</span>;
+            <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#dedede</span>;
+            <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">none</span>;
+            <span class="pl-c1"><span class="pl-c1">margin-top</span></span>: <span class="pl-c1">-1<span class="pl-k">px</span></span>;
+            <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0.5<span class="pl-k">em</span></span> <span class="pl-c1">1<span class="pl-k">em</span></span>;
+            <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">absolute</span>;
+            <span class="pl-c1"><span class="pl-c1">top</span></span>: <span class="pl-c1">2.2<span class="pl-k">em</span></span>;
+          }
 
-<span class="pl-c">/* sub-navigation panel open state */</span>
-<span class="pl-e">.sub-nav.open</span> {
-  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
-}
+          <span class="pl-c">/* sub-navigation panel open state */</span>
+          <span class="pl-e">.sub-nav.open</span> {
+            <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
+          }
 
-<span class="pl-c">/* list of items within sub-navigation panel */</span>
-<span class="pl-e">.sub-nav</span> <span class="pl-ent">ul</span> {
-  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline-block</span>;
-  <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span> <span class="pl-c1">1<span class="pl-k">em</span></span> <span class="pl-c1">0</span> <span class="pl-c1">0</span>;
-  <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
-  <span class="pl-c1"><span class="pl-c1">vertical-align</span></span>: <span class="pl-c1">top</span>;
-}
+          <span class="pl-c">/* list of items within sub-navigation panel */</span>
+          <span class="pl-e">.sub-nav</span> <span class="pl-ent">ul</span> {
+            <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">inline-block</span>;
+            <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span> <span class="pl-c1">1<span class="pl-k">em</span></span> <span class="pl-c1">0</span> <span class="pl-c1">0</span>;
+            <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
+            <span class="pl-c1"><span class="pl-c1">vertical-align</span></span>: <span class="pl-c1">top</span>;
+          }
 
-<span class="pl-c">/* list item within sub-navigation panel */</span>
-<span class="pl-e">.sub-nav</span> <span class="pl-ent">li</span> {
-  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
-  <span class="pl-c1"><span class="pl-c1">list-style-type</span></span>: <span class="pl-c1">none</span>;
-  <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>;
-  <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
-}   </pre> </div>
+          <span class="pl-c">/* list item within sub-navigation panel */</span>
+          <span class="pl-e">.sub-nav</span> <span class="pl-ent">li</span> {
+            <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
+            <span class="pl-c1"><span class="pl-c1">list-style-type</span></span>: <span class="pl-c1">none</span>;
+            <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>;
+            <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
+          }
+        </pre>
+      </div>
       <h2>Browser Support</h2>
       <p>The accessible mega menu works in current versions of Chrome, Firefox, Opera, Safari, Edge, and Internet Explorer 11.</p>
     </main>
