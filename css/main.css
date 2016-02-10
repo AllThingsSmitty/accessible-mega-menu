@@ -17,7 +17,7 @@ body {
 }
 code,
 pre {
-  background: #f4f4f4;
+  background-color: rgba(0,0,0,0.04);
   border-radius: 3px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   padding: 3px;
@@ -78,6 +78,7 @@ h3 {
 }
 .highlight pre {
   background: #f7f7f7;
+  border-radius: 3px;
   line-height: 1.45;
   margin-bottom: 0;
   overflow: auto;
@@ -95,7 +96,8 @@ h3 {
 .pl-en {
   color: #795da3;
 }
-.pl-ent {
+.pl-ent,
+.pl-sr .pl-cce {
   color: #63a35c;
 }
 .pl-k {
@@ -109,4 +111,14 @@ h3 {
 .pl-sr .pl-sra,
 .pl-sr .pl-sre {
   color: #183691;
+}
+.pl-s .pl-s1,
+.pl-smi {
+  color: #333;
+}
+.pl-sr .pl-cce {
+  font-weight: bold;
+}
+.pl-v {
+  color: #ed6a43;
 }
