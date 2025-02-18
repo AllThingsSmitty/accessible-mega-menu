@@ -1,14 +1,22 @@
+:root {
+  --active-blue: #225fd7;
+  --mute-gray: #b3b3b3;
+  --soft-white: #f5f8fa;
+  --deep-gray: #454545;
+}
+
 .menu {
-  background: #dfe2e2;
-  border: 1px solid #b3b3b3;
+  background-color: #dfe2e2;
+  border: 1px solid var(--mute-gray);
   border-top: none;
   box-sizing: border-box;
-  color: #454545;
+  color: var(--deep-gray);
   height: 3.077em;
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .menu h2,
 .menu h3,
 .menu h4 {
@@ -17,19 +25,22 @@
   line-height: inherit;
   padding: 0;
 }
+
 .menu:focus {
-  outline: 2px solid #225fd7;
+  outline: 2px solid var(--active-blue);
 }
+
 .menu-top-nav-item {
-  border-right: 1px solid #b3b3b3;
+  border-right: 1px solid var(--mute-gray);
   box-sizing: border-box;
-  color: #454545;
+  color: var(--deep-gray);
   float: left;
   position: relative;
   text-shadow: 0 1px 0 #fff;
 }
+
 .menu-top-nav-item a[aria-haspopup] {
-  color: #454545;
+  color: var(--deep-gray);
   display: block;
   height: 3em;
   line-height: 3em;
@@ -38,32 +49,37 @@
   text-decoration: none;
   z-index: inherit;
 }
+
 .menu-top-nav-item a[aria-haspopup]:hover,
 .menu-top-nav-item a[aria-haspopup]:focus {
   color: #333;
   outline-offset: -1px;
 }
+
 .menu-top-nav-item a[aria-haspopup]:hover,
 .menu-top-nav-item a[aria-haspopup]:focus,
 .menu-top-nav-item a[aria-haspopup].open {
-  background: #f5f8fa none;
+  background: var(--soft-white) none;
   margin-left: 0;
   z-index: 1002;
 }
+
 .menu-top-nav-item a[aria-haspopup].open {
-  background: #f5f8fa none;
+  background: var(--soft-white) none;
   padding-bottom: 2px;
 }
+
 .menu-top-nav-item:first-child a[aria-haspopup].open {
-  border-left: 1px solid #b3b3b3;
+  border-left: 1px solid var(--mute-gray);
   left: -1px;
   margin-right: -1px;
 }
+
 .menu-panel {
-  background: #f5f8fa;
-  border: 1px solid #b3b3b3;
+  background-color: var(--soft-white);
+  border: 1px solid var(--mute-gray);
   box-shadow: 0 4px 4px -3px #171717;
-  color: #454545;
+  color: var(--deep-gray);
   cursor: default;
   left: -1px;
   line-height: normal;
@@ -74,26 +90,31 @@
   padding: 0 12px;
   position: absolute;
   top: -9999em;
-  transition: opacity 250ms ease 250ms, max-height 500ms ease, visibility 0s linear 500ms, top 0s linear 500ms;
+  transition: opacity 250ms ease 250ms, max-height 500ms ease,
+    visibility 0s linear 500ms, top 0s linear 500ms;
   visibility: hidden;
 }
+
 .menu-panel.open {
   max-height: 600px;
   opacity: 1;
   top: 3em;
-  transition: opacity 250ms ease, max-height 500ms ease, visibility 0s linear 0s, top 0s linear 0s;
+  transition: opacity 250ms ease, max-height 500ms ease, visibility 0s linear 0s,
+    top 0s linear 0s;
   visibility: visible;
   z-index: 1001;
 }
+
 .menu-panel a {
-  color: #225fd7;
+  color: var(--active-blue);
   display: inline-block;
-  font-size: .92em;
+  font-size: 0.92em;
   font-weight: bold;
   line-height: 1.25;
-  margin: .35em 0;
+  margin: 0.35em 0;
   text-decoration: none;
 }
+
 .menu-panel ol {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -105,75 +126,91 @@
   margin: 0;
   padding: 0;
 }
+
 .menu-panel > ol > li {
-  border-left: 1px solid #b3b3b3;
+  border-left: 1px solid var(--mute-gray);
   float: left;
   margin-bottom: 1em;
   margin-right: 1em;
   padding-left: 1em;
 }
+
 .menu-panel > ol > li:first-of-type {
   border-left: none;
   box-shadow: none;
   padding-left: 0;
 }
+
 .menu-panel > p {
-  color: #454545;
+  color: var(--deep-gray);
   font-size: 1.2em;
   line-height: 1.1em;
 }
+
 .menu-panel a:hover,
 .menu-panel a:focus {
-  color: #225fd7;
+  color: var(--active-blue);
   text-decoration: underline;
 }
+
 .menu-panel hr {
   border: 0;
-  border-top: 1px solid #b3b3b3;
+  border-top: 1px solid var(--mute-gray);
 }
+
 .menu-panel.cols-1,
 .menu-panel.cols-3,
 .menu-panel.cols-4,
 .menu-panel.cols-4b {
   width: 874px;
 }
+
 .menu-panel.cols-1 {
   left: -22.9em;
 }
+
 .menu-panel.cols-1 > ol > li {
   width: auto;
 }
+
 .menu-panel.cols-3 {
   left: -13.55em;
 }
+
 .menu-panel.cols-3 > ol > li {
   width: 30%;
 }
+
 .menu-panel.cols-4 > ol > li,
 .menu-panel.cols-4b > ol > li {
   width: 22%;
 }
+
 .menu-panel.cols-4b {
   left: -7.4em;
 }
+
 .menu-panel-group h3 > a {
-  color: #454545;
+  color: var(--deep-gray);
   font-size: 1.2em;
   font-weight: bold;
   line-height: 1.1em;
   margin-bottom: 6px;
   padding-bottom: 0;
-  padding-top: .4em;
+  padding-top: 0.4em;
 }
+
 .menu-panel-group h3 > a:hover,
 .menu-panel-group > h3 > a:focus {
   color: #333;
 }
+
 .menu-panel-group ol {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
+
 .menu-panel-group li > a {
   padding-left: 2.5em;
   text-indent: -2.5em;

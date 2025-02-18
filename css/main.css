@@ -1,3 +1,10 @@
+/* general styling */
+:root {
+  --active-blue: #225fd7;
+  --mute-gray: #b3b3b3;
+  --deep-gray: #454545;
+}
+
 html,
 body {
   height: 100%;
@@ -5,37 +12,45 @@ body {
   padding: 0;
   width: 100%;
 }
+
 html {
   font-size: 14px;
   line-height: 1.5;
 }
+
 body {
-  background: #f2f4f5;
+  background-color: #f2f4f5;
   color: #333;
   cursor: default;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
 }
+
 code,
 pre {
-  background: rgba(0,0,0,0.04);
-  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 0.25rem;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  padding: 3px;
+  padding: 0.25rem;
 }
+
 code {
   white-space: nowrap;
 }
+
 h1 {
   font-size: 1.75rem;
 }
+
 h2 {
   font-size: 1.5rem;
 }
+
 h3 {
   font-size: 1.25rem;
 }
+
 .layout {
-  background: #fff;
+  background-color: #fff;
   box-shadow: 0 0 5px 1px #333;
   left: 0;
   margin: auto;
@@ -44,27 +59,33 @@ h3 {
   right: 0;
   width: 900px;
 }
+
 :link {
-  color: #225fd7;
+  color: var(--active-blue);
 }
+
 :link:focus {
-  outline: 2px solid #225fd7;
+  outline: 2px solid var(--active-blue);
   text-decoration: underline;
 }
+
 .skip-nav {
   float: left;
   font-weight: 700;
   padding: 10px;
 }
+
 .skip-nav:focus {
   visibility: visible;
 }
+
 .skip-nav a {
-  color: #454545;
+  color: var(--deep-gray);
   left: -500px;
   overflow: hidden;
   position: absolute;
 }
+
 .skip-nav a:active,
 .skip-nav a:focus {
   left: 0;
@@ -76,8 +97,9 @@ h3 {
 .highlight {
   margin-bottom: 16px;
 }
+
 .highlight pre {
-  background: #f7f7f7;
+  background-color: #f7f7f7;
   border-radius: 3px;
   line-height: 1.45;
   margin-bottom: 0;
@@ -85,24 +107,31 @@ h3 {
   padding: 16px;
   word-break: normal;
 }
+
+/* syntax highlighting */
 .pl-c {
   color: #969896;
 }
+
 .pl-c1,
 .pl-s .pl-v {
   color: #0086b3;
 }
+
 .pl-e,
 .pl-en {
   color: #795da3;
 }
+
 .pl-ent,
 .pl-sr .pl-cce {
   color: #63a35c;
 }
+
 .pl-k {
   color: #a71d5d;
 }
+
 .pl-pds,
 .pl-pse .pl-s1,
 .pl-s,
@@ -112,13 +141,16 @@ h3 {
 .pl-sr .pl-sre {
   color: #183691;
 }
+
 .pl-s .pl-s1,
 .pl-smi {
   color: #333;
 }
+
 .pl-sr .pl-cce {
   font-weight: bold;
 }
+
 .pl-v {
   color: #ed6a43;
 }
