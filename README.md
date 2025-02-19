@@ -353,11 +353,11 @@ Putting it all together, here is the completed example:
     </nav>
 
     <!-- include jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script>
-      window.jQuery ||
-        document.write('<script src="js/jquery-1.10.1.min.js">\x3C/script>');
-    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
 
     <!-- include the accessible-mega-menu plugin script -->
     <script src="js/accessible-mega-menu.js"></script>
